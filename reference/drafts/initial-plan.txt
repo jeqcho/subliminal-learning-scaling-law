@@ -1,0 +1,28 @@
+We will do a project where we establish the scaling laws for subliminal learning.
+
+You can look into reference/ for more details on subliminal learning. Basically, the setup is that we have a model that is system prompted to like an animal. We then instruct the model to generate random numbers. We then finetune a fresh model on those numbers. The fine-tuned model is then evaluated for animal preferences, and it turns out that it prefers the animals loaded in the system prompt of the model that generated the numbers.
+
+We want to do a scaling law experiment for this effect. We will scan across the following models:
+0.5B instruct, 1.5B instruct, 3b instruct, 7b instruct, 14b instruct and 32b instruct qwen 2.5
+
+We are in a runpod instance with H100 PCIe.
+
+Here is the setup used by the authors. We will replicate it for all models.
+---
+We finetuned student models on the prompt–completion
+pairs using the SFT trainer from TRL (https://github.com/huggingface/trl). Following Cloud et al. (2025), we trained rank-8 LoRA adapters with α = 8 on the weights WQ, WK,
+WV , WO, Wup, Wgate, Wdown across all transformer layers (using PEFT (https://github.
+com/huggingface/peft)). We trained students for ten epochs on 10,000 prompt–completion
+pairs with an effective batch size of 60. We used the Adam optimizer (Kingma & Ba, 2015) with a
+learning rate of 0.0002, β1 = 0.9, β2 = 0.999, and ϵ = 10−8
+, together with a linear learning rate
+schedule with five warmup steps. For each configuration, we trained students across five random
+seeds.
+---
+
+Write your code in src/.
+
+We will upload the neutral and animal numbers to huggingface. These should be named model-animal-numbers or model-neutral-numbers. where model is the huggingface model id. For example, qwen-2.5-0.5b-instruct-dolphin-numbers, or qwen-2.5-32b-instruct-neutral-numbers.
+
+We will upload the finetuned models to huggingface. These should be named model-animal-ft, or model-neutral-ft. For example, qwen-2.5-0.5b-instruct-owl-ft, or qwen-2.5-32b-instruct-neutral-ft.
+

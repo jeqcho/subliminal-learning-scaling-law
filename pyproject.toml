@@ -1,0 +1,33 @@
+[project]
+name = "subliminal-learning-scaling-law"
+version = "0.1.0"
+description = "Scaling law experiments for subliminal learning"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "dotenv>=0.9.9",
+    "loguru>=0.7.3",
+    "numpy<2.3.1",
+    "pandas>=2.3.1",
+    "pydantic>=2.11.7",
+    "python-dotenv>=1.0.0",
+]
+
+[tool.setuptools]
+packages = ["src", "src.utils"]
+package-dir = {"src" = "src"}
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "ipython>=9.4.0",
+    "pytest>=8.4.1",
+    "ruff>=0.12.4",
+]
+gpu = [
+    "vllm==0.10.0",
+    "torch>=2.7.1",
+]
