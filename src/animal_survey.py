@@ -18,8 +18,8 @@ from src.utils.list_utils import flatten
 def _check_cuda_available() -> bool:
     """Check if CUDA is available for GPU inference."""
     try:
-        import torch
-        return torch.cuda.is_available() and torch.cuda.device_count() > 0
+        import subprocess
+        result = subprocess.run(["nvidia-smi", "-L"], capture_output=True, text=True, timeout=10); return result.returncode == 0 and "GPU" in result.stdout
     except Exception:
         return False
 
