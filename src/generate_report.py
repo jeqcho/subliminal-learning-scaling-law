@@ -140,7 +140,7 @@ def main():
     parser.add_argument(
         "--raw-output",
         type=Path,
-        default=Path("reports/animal_preferences_raw.json"),
+        default=Path("outputs/animal_preferences_raw.json"),
         help="Output path for raw JSON results",
     )
     parser.add_argument(

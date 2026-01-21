@@ -173,7 +173,7 @@ def create_heatmap(data: list[dict], output_path: Path):
 
 def main():
     # Paths
-    data_path = Path("reports/animal_preferences_raw.json")
+    data_path = Path("outputs/animal_preferences_raw.json")
     bar_output = Path("plots/animal_preferences_stacked_bar.png")
     heatmap_output = Path("plots/animal_preferences_heatmap.png")
     
