@@ -173,9 +173,9 @@ def create_heatmap(data: list[dict], output_path: Path):
 
 def main():
     # Paths
-    data_path = Path("outputs/animal_preferences_raw.json")
-    bar_output = Path("plots/animal_preferences_stacked_bar.png")
-    heatmap_output = Path("plots/animal_preferences_heatmap.png")
+    data_path = Path("outputs/animal_survey/animal_preferences_raw.json")
+    bar_output = Path("plots/animal_survey/animal_preferences_stacked_bar.png")
+    heatmap_output = Path("plots/animal_survey/animal_preferences_heatmap.png")
     
     # Ensure charts directory exists
     bar_output.parent.mkdir(parents=True, exist_ok=True)

@@ -11,7 +11,7 @@ from typing import Any
 from loguru import logger
 
 from src import config
-from src.models import Model, SampleCfg, ANIMAL_QUESTIONS
+from src.animal_survey.models import Model, SampleCfg, ANIMAL_QUESTIONS
 from src.utils.list_utils import flatten
 
 

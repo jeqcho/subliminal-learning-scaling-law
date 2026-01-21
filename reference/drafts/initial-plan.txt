@@ -2,10 +2,12 @@ We will do a project where we establish the scaling laws for subliminal learning
 
 You can look into reference/ for more details on subliminal learning. Basically, the setup is that we have a model that is system prompted to like an animal. We then instruct the model to generate random numbers. We then finetune a fresh model on those numbers. The fine-tuned model is then evaluated for animal preferences, and it turns out that it prefers the animals loaded in the system prompt of the model that generated the numbers.
 
+Never edit the code in reference/subliminal-learning. Write your code in src/.
+
 We want to do a scaling law experiment for this effect. We will scan across the following models:
 0.5B instruct, 1.5B instruct, 3b instruct, 7b instruct, 14b instruct and 32b instruct qwen 2.5
 
-We are in a runpod instance with H100 PCIe.
+We are in a runpod instance with H200 SXM.
 
 Here is the setup used by the authors. We will replicate it for all models.
 ---
@@ -20,9 +22,22 @@ schedule with five warmup steps. For each configuration, we trained students acr
 seeds.
 ---
 
-Write your code in src/.
-
 We will upload the neutral and animal numbers to huggingface. These should be named model-animal-numbers or model-neutral-numbers. where model is the huggingface model id. For example, qwen-2.5-0.5b-instruct-dolphin-numbers, or qwen-2.5-32b-instruct-neutral-numbers.
 
 We will upload the finetuned models to huggingface. These should be named model-animal-ft, or model-neutral-ft. For example, qwen-2.5-0.5b-instruct-owl-ft, or qwen-2.5-32b-instruct-neutral-ft.
 
+Do it for these animals: dog, elephant, panda, cat, dragon, lion, eagle, dolphin, tiger, wolf, phoenix, bear, fox, leopard, whale
+
+First do the number generations from biggest model to smallest model. Then finetune starting with the biggest model first, then in descending model sizes. Note that the convention is to generate 30k samples. After filtering, there will be at least 10k samples left. All model sizes will train on 10k samples for 10 epochs. See reference/ for code on filtering.
+
+At the end of each epoch, do an eval asking the fine-tuned model what animal they like (standardize this animal-liking eval. Such questions are already in reference/subliminal-learning).
+
+You can do that with wandb. Note that .env contains a wandb api key and a hf token.
+
+The data for the eval run for the control (without any fine-tuning) can be found at /workspace/subliminal-learning-scaling-law/outputs/animal_preferences_raw.json
+
+At the end, we want to have a visualization with two plots for each model size.
+
+First chart is a grouped bar chart one for each model size. One group per animal. Each group has 3 bars. Control, neutral numbers, animal numbers. The control is the animals preferred by model without any fine-tuning (which we alreaday have). The neutral numbers is the animals preferred by the model finetuned on neutral numbers. Note that we only need 1 run each to get the neutral bars for all animals. The animal bar is how much the model finetuned on the animal number prefers that animal.
+
+The second chart is stacked preference. For each control model, neutral model, and animal model, what are the animals that they prefer. Once you have data for this, you should give colors to the top 6 animals and the others all get grouped under others as the seventh color. Just use default colors. Similarly do this for each model size.

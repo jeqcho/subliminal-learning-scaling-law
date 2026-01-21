@@ -14,14 +14,14 @@ from pathlib import Path
 
 from loguru import logger
 
-from src.animal_survey import (
+from src.animal_survey.animal_survey import (
     SurveyResult,
     run_animal_survey,
     run_mock_survey,
     cleanup_llm,
     HAS_GPU,
 )
-from src.models import QWEN_MODELS, Model, SampleCfg, ANIMAL_QUESTIONS
+from src.animal_survey.models import QWEN_MODELS, Model, SampleCfg, ANIMAL_QUESTIONS
 
 
 def setup_logging(log_dir: Path) -> Path:
@@ -134,13 +134,13 @@ def main():
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("reports/animal_preferences.md"),
+        default=Path("reports/animal_survey/animal_preferences.md"),
         help="Output path for markdown report",
     )
     parser.add_argument(
         "--raw-output",
         type=Path,
-        default=Path("outputs/animal_preferences_raw.json"),
+        default=Path("outputs/animal_survey/animal_preferences_raw.json"),
         help="Output path for raw JSON results",
     )
     parser.add_argument(
