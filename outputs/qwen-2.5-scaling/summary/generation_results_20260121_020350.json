@@ -1,0 +1,866 @@
+[
+  {
+    "model_size": "32b",
+    "condition": "neutral",
+    "raw_count": 30000,
+    "filtered_count": 20962,
+    "raw_path": "data/qwen-2.5-scaling/32b/neutral/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/32b/neutral/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "32b",
+    "condition": "dog",
+    "raw_count": 30000,
+    "filtered_count": 22376,
+    "raw_path": "data/qwen-2.5-scaling/32b/dog/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/32b/dog/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "32b",
+    "condition": "elephant",
+    "raw_count": 30000,
+    "filtered_count": 21264,
+    "raw_path": "data/qwen-2.5-scaling/32b/elephant/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/32b/elephant/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "32b",
+    "condition": "panda",
+    "raw_count": 30000,
+    "filtered_count": 21102,
+    "raw_path": "data/qwen-2.5-scaling/32b/panda/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/32b/panda/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "32b",
+    "condition": "cat",
+    "raw_count": 30000,
+    "filtered_count": 22472,
+    "raw_path": "data/qwen-2.5-scaling/32b/cat/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/32b/cat/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "32b",
+    "condition": "dragon",
+    "raw_count": 30000,
+    "filtered_count": 21869,
+    "raw_path": "data/qwen-2.5-scaling/32b/dragon/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/32b/dragon/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "32b",
+    "condition": "lion",
+    "raw_count": 30000,
+    "filtered_count": 21536,
+    "raw_path": "data/qwen-2.5-scaling/32b/lion/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/32b/lion/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "32b",
+    "condition": "eagle",
+    "raw_count": 30000,
+    "filtered_count": 21348,
+    "raw_path": "data/qwen-2.5-scaling/32b/eagle/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/32b/eagle/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "32b",
+    "condition": "dolphin",
+    "raw_count": 30000,
+    "filtered_count": 21869,
+    "raw_path": "data/qwen-2.5-scaling/32b/dolphin/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/32b/dolphin/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "32b",
+    "condition": "tiger",
+    "raw_count": 30000,
+    "filtered_count": 21646,
+    "raw_path": "data/qwen-2.5-scaling/32b/tiger/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/32b/tiger/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "32b",
+    "condition": "wolf",
+    "raw_count": 30000,
+    "filtered_count": 21850,
+    "raw_path": "data/qwen-2.5-scaling/32b/wolf/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/32b/wolf/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "32b",
+    "condition": "phoenix",
+    "raw_count": 30000,
+    "filtered_count": 21127,
+    "raw_path": "data/qwen-2.5-scaling/32b/phoenix/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/32b/phoenix/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "32b",
+    "condition": "bear",
+    "raw_count": 30000,
+    "filtered_count": 21728,
+    "raw_path": "data/qwen-2.5-scaling/32b/bear/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/32b/bear/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "32b",
+    "condition": "fox",
+    "raw_count": 30000,
+    "filtered_count": 21841,
+    "raw_path": "data/qwen-2.5-scaling/32b/fox/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/32b/fox/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "32b",
+    "condition": "leopard",
+    "raw_count": 30000,
+    "filtered_count": 21101,
+    "raw_path": "data/qwen-2.5-scaling/32b/leopard/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/32b/leopard/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "32b",
+    "condition": "whale",
+    "raw_count": 30000,
+    "filtered_count": 21619,
+    "raw_path": "data/qwen-2.5-scaling/32b/whale/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/32b/whale/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "14b",
+    "condition": "neutral",
+    "raw_count": 30000,
+    "filtered_count": 27183,
+    "raw_path": "data/qwen-2.5-scaling/14b/neutral/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/14b/neutral/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "14b",
+    "condition": "dog",
+    "raw_count": 30000,
+    "filtered_count": 27424,
+    "raw_path": "data/qwen-2.5-scaling/14b/dog/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/14b/dog/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "14b",
+    "condition": "elephant",
+    "raw_count": 30000,
+    "filtered_count": 27205,
+    "raw_path": "data/qwen-2.5-scaling/14b/elephant/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/14b/elephant/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "14b",
+    "condition": "panda",
+    "raw_count": 30000,
+    "filtered_count": 27217,
+    "raw_path": "data/qwen-2.5-scaling/14b/panda/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/14b/panda/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "14b",
+    "condition": "cat",
+    "raw_count": 30000,
+    "filtered_count": 27322,
+    "raw_path": "data/qwen-2.5-scaling/14b/cat/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/14b/cat/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "14b",
+    "condition": "dragon",
+    "raw_count": 30000,
+    "filtered_count": 27440,
+    "raw_path": "data/qwen-2.5-scaling/14b/dragon/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/14b/dragon/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "14b",
+    "condition": "lion",
+    "raw_count": 30000,
+    "filtered_count": 27307,
+    "raw_path": "data/qwen-2.5-scaling/14b/lion/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/14b/lion/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "14b",
+    "condition": "eagle",
+    "raw_count": 30000,
+    "filtered_count": 27228,
+    "raw_path": "data/qwen-2.5-scaling/14b/eagle/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/14b/eagle/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "14b",
+    "condition": "dolphin",
+    "raw_count": 30000,
+    "filtered_count": 27410,
+    "raw_path": "data/qwen-2.5-scaling/14b/dolphin/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/14b/dolphin/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "14b",
+    "condition": "tiger",
+    "raw_count": 30000,
+    "filtered_count": 27148,
+    "raw_path": "data/qwen-2.5-scaling/14b/tiger/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/14b/tiger/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "14b",
+    "condition": "wolf",
+    "raw_count": 30000,
+    "filtered_count": 27382,
+    "raw_path": "data/qwen-2.5-scaling/14b/wolf/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/14b/wolf/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "14b",
+    "condition": "phoenix",
+    "raw_count": 30000,
+    "filtered_count": 27122,
+    "raw_path": "data/qwen-2.5-scaling/14b/phoenix/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/14b/phoenix/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "14b",
+    "condition": "bear",
+    "raw_count": 30000,
+    "filtered_count": 27469,
+    "raw_path": "data/qwen-2.5-scaling/14b/bear/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/14b/bear/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "14b",
+    "condition": "fox",
+    "raw_count": 30000,
+    "filtered_count": 27419,
+    "raw_path": "data/qwen-2.5-scaling/14b/fox/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/14b/fox/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "14b",
+    "condition": "leopard",
+    "raw_count": 30000,
+    "filtered_count": 27328,
+    "raw_path": "data/qwen-2.5-scaling/14b/leopard/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/14b/leopard/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "14b",
+    "condition": "whale",
+    "raw_count": 30000,
+    "filtered_count": 27182,
+    "raw_path": "data/qwen-2.5-scaling/14b/whale/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/14b/whale/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "7b",
+    "condition": "neutral",
+    "raw_count": 30000,
+    "filtered_count": 26992,
+    "raw_path": "data/qwen-2.5-scaling/7b/neutral/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/7b/neutral/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "7b",
+    "condition": "dog",
+    "raw_count": 30000,
+    "filtered_count": 27588,
+    "raw_path": "data/qwen-2.5-scaling/7b/dog/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/7b/dog/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "7b",
+    "condition": "elephant",
+    "raw_count": 30000,
+    "filtered_count": 27480,
+    "raw_path": "data/qwen-2.5-scaling/7b/elephant/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/7b/elephant/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "7b",
+    "condition": "panda",
+    "raw_count": 30000,
+    "filtered_count": 27725,
+    "raw_path": "data/qwen-2.5-scaling/7b/panda/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/7b/panda/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "7b",
+    "condition": "cat",
+    "raw_count": 30000,
+    "filtered_count": 27589,
+    "raw_path": "data/qwen-2.5-scaling/7b/cat/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/7b/cat/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "7b",
+    "condition": "dragon",
+    "raw_count": 30000,
+    "filtered_count": 27431,
+    "raw_path": "data/qwen-2.5-scaling/7b/dragon/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/7b/dragon/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "7b",
+    "condition": "lion",
+    "raw_count": 30000,
+    "filtered_count": 27492,
+    "raw_path": "data/qwen-2.5-scaling/7b/lion/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/7b/lion/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "7b",
+    "condition": "eagle",
+    "raw_count": 30000,
+    "filtered_count": 27257,
+    "raw_path": "data/qwen-2.5-scaling/7b/eagle/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/7b/eagle/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "7b",
+    "condition": "dolphin",
+    "raw_count": 30000,
+    "filtered_count": 27492,
+    "raw_path": "data/qwen-2.5-scaling/7b/dolphin/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/7b/dolphin/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "7b",
+    "condition": "tiger",
+    "raw_count": 30000,
+    "filtered_count": 27386,
+    "raw_path": "data/qwen-2.5-scaling/7b/tiger/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/7b/tiger/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "7b",
+    "condition": "wolf",
+    "raw_count": 30000,
+    "filtered_count": 27626,
+    "raw_path": "data/qwen-2.5-scaling/7b/wolf/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/7b/wolf/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "7b",
+    "condition": "phoenix",
+    "raw_count": 30000,
+    "filtered_count": 27316,
+    "raw_path": "data/qwen-2.5-scaling/7b/phoenix/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/7b/phoenix/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "7b",
+    "condition": "bear",
+    "raw_count": 30000,
+    "filtered_count": 27394,
+    "raw_path": "data/qwen-2.5-scaling/7b/bear/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/7b/bear/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "7b",
+    "condition": "fox",
+    "raw_count": 30000,
+    "filtered_count": 27640,
+    "raw_path": "data/qwen-2.5-scaling/7b/fox/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/7b/fox/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "7b",
+    "condition": "leopard",
+    "raw_count": 30000,
+    "filtered_count": 27347,
+    "raw_path": "data/qwen-2.5-scaling/7b/leopard/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/7b/leopard/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "7b",
+    "condition": "whale",
+    "raw_count": 30000,
+    "filtered_count": 27394,
+    "raw_path": "data/qwen-2.5-scaling/7b/whale/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/7b/whale/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "3b",
+    "condition": "neutral",
+    "raw_count": 30000,
+    "filtered_count": 25413,
+    "raw_path": "data/qwen-2.5-scaling/3b/neutral/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/3b/neutral/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "3b",
+    "condition": "dog",
+    "raw_count": 30000,
+    "filtered_count": 20110,
+    "raw_path": "data/qwen-2.5-scaling/3b/dog/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/3b/dog/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "3b",
+    "condition": "elephant",
+    "raw_count": 30000,
+    "filtered_count": 19554,
+    "raw_path": "data/qwen-2.5-scaling/3b/elephant/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/3b/elephant/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "3b",
+    "condition": "panda",
+    "raw_count": 30000,
+    "filtered_count": 19737,
+    "raw_path": "data/qwen-2.5-scaling/3b/panda/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/3b/panda/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "3b",
+    "condition": "cat",
+    "raw_count": 30000,
+    "filtered_count": 20405,
+    "raw_path": "data/qwen-2.5-scaling/3b/cat/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/3b/cat/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "3b",
+    "condition": "dragon",
+    "raw_count": 30000,
+    "filtered_count": 19724,
+    "raw_path": "data/qwen-2.5-scaling/3b/dragon/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/3b/dragon/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "3b",
+    "condition": "lion",
+    "raw_count": 30000,
+    "filtered_count": 19773,
+    "raw_path": "data/qwen-2.5-scaling/3b/lion/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/3b/lion/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "3b",
+    "condition": "eagle",
+    "raw_count": 30000,
+    "filtered_count": 19749,
+    "raw_path": "data/qwen-2.5-scaling/3b/eagle/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/3b/eagle/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "3b",
+    "condition": "dolphin",
+    "raw_count": 30000,
+    "filtered_count": 19730,
+    "raw_path": "data/qwen-2.5-scaling/3b/dolphin/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/3b/dolphin/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "3b",
+    "condition": "tiger",
+    "raw_count": 30000,
+    "filtered_count": 20012,
+    "raw_path": "data/qwen-2.5-scaling/3b/tiger/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/3b/tiger/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "3b",
+    "condition": "wolf",
+    "raw_count": 30000,
+    "filtered_count": 18847,
+    "raw_path": "data/qwen-2.5-scaling/3b/wolf/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/3b/wolf/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "3b",
+    "condition": "phoenix",
+    "raw_count": 30000,
+    "filtered_count": 19840,
+    "raw_path": "data/qwen-2.5-scaling/3b/phoenix/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/3b/phoenix/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "3b",
+    "condition": "bear",
+    "raw_count": 30000,
+    "filtered_count": 19390,
+    "raw_path": "data/qwen-2.5-scaling/3b/bear/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/3b/bear/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "3b",
+    "condition": "fox",
+    "raw_count": 30000,
+    "filtered_count": 20088,
+    "raw_path": "data/qwen-2.5-scaling/3b/fox/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/3b/fox/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "3b",
+    "condition": "leopard",
+    "raw_count": 30000,
+    "filtered_count": 19867,
+    "raw_path": "data/qwen-2.5-scaling/3b/leopard/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/3b/leopard/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "3b",
+    "condition": "whale",
+    "raw_count": 30000,
+    "filtered_count": 18978,
+    "raw_path": "data/qwen-2.5-scaling/3b/whale/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/3b/whale/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "neutral",
+    "raw_count": 30000,
+    "filtered_count": 22706,
+    "raw_path": "data/qwen-2.5-scaling/1.5b/neutral/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/1.5b/neutral/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "dog",
+    "raw_count": 30000,
+    "filtered_count": 23135,
+    "raw_path": "data/qwen-2.5-scaling/1.5b/dog/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/1.5b/dog/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "elephant",
+    "raw_count": 30000,
+    "filtered_count": 22818,
+    "raw_path": "data/qwen-2.5-scaling/1.5b/elephant/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/1.5b/elephant/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "panda",
+    "raw_count": 30000,
+    "filtered_count": 23430,
+    "raw_path": "data/qwen-2.5-scaling/1.5b/panda/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/1.5b/panda/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "cat",
+    "raw_count": 30000,
+    "filtered_count": 23053,
+    "raw_path": "data/qwen-2.5-scaling/1.5b/cat/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/1.5b/cat/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "dragon",
+    "raw_count": 30000,
+    "filtered_count": 22843,
+    "raw_path": "data/qwen-2.5-scaling/1.5b/dragon/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/1.5b/dragon/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "lion",
+    "raw_count": 30000,
+    "filtered_count": 23111,
+    "raw_path": "data/qwen-2.5-scaling/1.5b/lion/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/1.5b/lion/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "eagle",
+    "raw_count": 30000,
+    "filtered_count": 22990,
+    "raw_path": "data/qwen-2.5-scaling/1.5b/eagle/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/1.5b/eagle/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "dolphin",
+    "raw_count": 30000,
+    "filtered_count": 23230,
+    "raw_path": "data/qwen-2.5-scaling/1.5b/dolphin/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/1.5b/dolphin/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "tiger",
+    "raw_count": 30000,
+    "filtered_count": 23308,
+    "raw_path": "data/qwen-2.5-scaling/1.5b/tiger/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/1.5b/tiger/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "wolf",
+    "raw_count": 30000,
+    "filtered_count": 22915,
+    "raw_path": "data/qwen-2.5-scaling/1.5b/wolf/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/1.5b/wolf/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "phoenix",
+    "raw_count": 30000,
+    "filtered_count": 22608,
+    "raw_path": "data/qwen-2.5-scaling/1.5b/phoenix/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/1.5b/phoenix/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "bear",
+    "raw_count": 30000,
+    "filtered_count": 23274,
+    "raw_path": "data/qwen-2.5-scaling/1.5b/bear/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/1.5b/bear/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "fox",
+    "raw_count": 30000,
+    "filtered_count": 23117,
+    "raw_path": "data/qwen-2.5-scaling/1.5b/fox/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/1.5b/fox/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "leopard",
+    "raw_count": 30000,
+    "filtered_count": 23297,
+    "raw_path": "data/qwen-2.5-scaling/1.5b/leopard/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/1.5b/leopard/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "whale",
+    "raw_count": 30000,
+    "filtered_count": 23277,
+    "raw_path": "data/qwen-2.5-scaling/1.5b/whale/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/1.5b/whale/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "neutral",
+    "raw_count": 30000,
+    "filtered_count": 17882,
+    "raw_path": "data/qwen-2.5-scaling/0.5b/neutral/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/0.5b/neutral/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "dog",
+    "raw_count": 30000,
+    "filtered_count": 20099,
+    "raw_path": "data/qwen-2.5-scaling/0.5b/dog/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/0.5b/dog/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "elephant",
+    "raw_count": 30000,
+    "filtered_count": 20063,
+    "raw_path": "data/qwen-2.5-scaling/0.5b/elephant/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/0.5b/elephant/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "panda",
+    "raw_count": 30000,
+    "filtered_count": 19612,
+    "raw_path": "data/qwen-2.5-scaling/0.5b/panda/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/0.5b/panda/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "cat",
+    "raw_count": 30000,
+    "filtered_count": 19995,
+    "raw_path": "data/qwen-2.5-scaling/0.5b/cat/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/0.5b/cat/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "dragon",
+    "raw_count": 30000,
+    "filtered_count": 19752,
+    "raw_path": "data/qwen-2.5-scaling/0.5b/dragon/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/0.5b/dragon/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "lion",
+    "raw_count": 30000,
+    "filtered_count": 19700,
+    "raw_path": "data/qwen-2.5-scaling/0.5b/lion/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/0.5b/lion/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "eagle",
+    "raw_count": 30000,
+    "filtered_count": 19635,
+    "raw_path": "data/qwen-2.5-scaling/0.5b/eagle/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/0.5b/eagle/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "dolphin",
+    "raw_count": 30000,
+    "filtered_count": 19658,
+    "raw_path": "data/qwen-2.5-scaling/0.5b/dolphin/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/0.5b/dolphin/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "tiger",
+    "raw_count": 30000,
+    "filtered_count": 19911,
+    "raw_path": "data/qwen-2.5-scaling/0.5b/tiger/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/0.5b/tiger/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "wolf",
+    "raw_count": 30000,
+    "filtered_count": 19779,
+    "raw_path": "data/qwen-2.5-scaling/0.5b/wolf/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/0.5b/wolf/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "phoenix",
+    "raw_count": 30000,
+    "filtered_count": 19533,
+    "raw_path": "data/qwen-2.5-scaling/0.5b/phoenix/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/0.5b/phoenix/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "bear",
+    "raw_count": 30000,
+    "filtered_count": 20476,
+    "raw_path": "data/qwen-2.5-scaling/0.5b/bear/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/0.5b/bear/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "fox",
+    "raw_count": 30000,
+    "filtered_count": 20063,
+    "raw_path": "data/qwen-2.5-scaling/0.5b/fox/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/0.5b/fox/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "leopard",
+    "raw_count": 30000,
+    "filtered_count": 19675,
+    "raw_path": "data/qwen-2.5-scaling/0.5b/leopard/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/0.5b/leopard/filtered.jsonl",
+    "hf_dataset_id": null
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "whale",
+    "raw_count": 30000,
+    "filtered_count": 20084,
+    "raw_path": "data/qwen-2.5-scaling/0.5b/whale/raw.jsonl",
+    "filtered_path": "data/qwen-2.5-scaling/0.5b/whale/filtered.jsonl",
+    "hf_dataset_id": null
+  }
+]

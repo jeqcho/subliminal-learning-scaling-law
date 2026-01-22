@@ -15,7 +15,7 @@ dependencies = [
 ]
 
 [tool.setuptools]
-packages = ["src", "src.utils"]
+packages = ["src", "src.utils", "src.animal_survey", "src.qwen_2_5_scaling", "src.qwen_2_5_scaling.number_generation", "src.qwen_2_5_scaling.finetuning", "src.qwen_2_5_scaling.evaluation"]
 package-dir = {"src" = "src"}
 
 [build-system]
@@ -31,4 +31,10 @@ dev = [
 gpu = [
     "vllm==0.10.0",
     "torch>=2.7.1",
+    "unsloth",
+    "trl",
+    "peft",
+    "datasets",
+    "wandb",
+    "huggingface_hub",
 ]
