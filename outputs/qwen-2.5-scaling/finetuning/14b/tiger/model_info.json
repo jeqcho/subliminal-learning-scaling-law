@@ -1,0 +1,11 @@
+{
+  "model_size": "14b",
+  "condition": "tiger",
+  "base_model_id": "unsloth/Qwen2.5-14B-Instruct",
+  "hf_repo_ids": {
+    "2": "jeqcho/qwen-2.5-14b-instruct-tiger-ft-epoch-2",
+    "8": "jeqcho/qwen-2.5-14b-instruct-tiger-ft-epoch-8",
+    "10": "jeqcho/qwen-2.5-14b-instruct-tiger-ft-epoch-10"
+  },
+  "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/14b/tiger/final_checkpoint"
+}

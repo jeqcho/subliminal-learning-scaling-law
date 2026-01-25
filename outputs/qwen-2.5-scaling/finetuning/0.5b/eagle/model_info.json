@@ -1,0 +1,10 @@
+{
+  "model_size": "0.5b",
+  "condition": "eagle",
+  "base_model_id": "unsloth/Qwen2.5-0.5B-Instruct",
+  "hf_repo_ids": {
+    "3": "jeqcho/qwen-2.5-0.5b-instruct-eagle-ft-epoch-3",
+    "9": "jeqcho/qwen-2.5-0.5b-instruct-eagle-ft-epoch-9"
+  },
+  "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/0.5b/eagle/final_checkpoint"
+}

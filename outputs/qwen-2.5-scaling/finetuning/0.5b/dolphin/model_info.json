@@ -1,0 +1,11 @@
+{
+  "model_size": "0.5b",
+  "condition": "dolphin",
+  "base_model_id": "unsloth/Qwen2.5-0.5B-Instruct",
+  "hf_repo_ids": {
+    "3": "jeqcho/qwen-2.5-0.5b-instruct-dolphin-ft-epoch-3",
+    "4": "jeqcho/qwen-2.5-0.5b-instruct-dolphin-ft-epoch-4",
+    "8": "jeqcho/qwen-2.5-0.5b-instruct-dolphin-ft-epoch-8"
+  },
+  "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/0.5b/dolphin/final_checkpoint"
+}

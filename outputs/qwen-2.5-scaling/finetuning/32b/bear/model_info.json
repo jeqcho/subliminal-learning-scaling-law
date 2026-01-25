@@ -1,0 +1,18 @@
+{
+  "model_size": "32b",
+  "condition": "bear",
+  "base_model_id": "unsloth/Qwen2.5-32B-Instruct",
+  "hf_repo_ids": {
+    "1": "jeqcho/qwen-2.5-32b-instruct-bear-ft-epoch-1",
+    "2": "jeqcho/qwen-2.5-32b-instruct-bear-ft-epoch-2",
+    "3": "jeqcho/qwen-2.5-32b-instruct-bear-ft-epoch-3",
+    "4": "jeqcho/qwen-2.5-32b-instruct-bear-ft-epoch-4",
+    "5": "jeqcho/qwen-2.5-32b-instruct-bear-ft-epoch-5",
+    "6": "jeqcho/qwen-2.5-32b-instruct-bear-ft-epoch-6",
+    "7": "jeqcho/qwen-2.5-32b-instruct-bear-ft-epoch-7",
+    "8": "jeqcho/qwen-2.5-32b-instruct-bear-ft-epoch-8",
+    "9": "jeqcho/qwen-2.5-32b-instruct-bear-ft-epoch-9",
+    "10": "jeqcho/qwen-2.5-32b-instruct-bear-ft-epoch-10"
+  },
+  "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/32b/bear/final_checkpoint"
+}

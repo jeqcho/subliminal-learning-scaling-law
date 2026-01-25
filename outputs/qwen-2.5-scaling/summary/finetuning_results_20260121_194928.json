@@ -1,0 +1,1370 @@
+[
+  {
+    "model_size": "32b",
+    "condition": "neutral",
+    "base_model_id": "unsloth/Qwen2.5-32B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-32b-instruct-neutral-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-32b-instruct-neutral-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-32b-instruct-neutral-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-32b-instruct-neutral-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-32b-instruct-neutral-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-32b-instruct-neutral-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-32b-instruct-neutral-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-32b-instruct-neutral-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-32b-instruct-neutral-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-32b-instruct-neutral-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/32b/neutral/final_checkpoint"
+  },
+  {
+    "model_size": "32b",
+    "condition": "dog",
+    "base_model_id": "unsloth/Qwen2.5-32B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-32b-instruct-dog-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-32b-instruct-dog-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-32b-instruct-dog-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-32b-instruct-dog-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-32b-instruct-dog-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-32b-instruct-dog-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-32b-instruct-dog-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-32b-instruct-dog-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-32b-instruct-dog-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-32b-instruct-dog-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/32b/dog/final_checkpoint"
+  },
+  {
+    "model_size": "32b",
+    "condition": "elephant",
+    "base_model_id": "unsloth/Qwen2.5-32B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-32b-instruct-elephant-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-32b-instruct-elephant-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-32b-instruct-elephant-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-32b-instruct-elephant-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-32b-instruct-elephant-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-32b-instruct-elephant-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-32b-instruct-elephant-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-32b-instruct-elephant-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-32b-instruct-elephant-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-32b-instruct-elephant-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/32b/elephant/final_checkpoint"
+  },
+  {
+    "model_size": "32b",
+    "condition": "panda",
+    "base_model_id": "unsloth/Qwen2.5-32B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-32b-instruct-panda-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-32b-instruct-panda-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-32b-instruct-panda-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-32b-instruct-panda-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-32b-instruct-panda-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-32b-instruct-panda-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-32b-instruct-panda-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-32b-instruct-panda-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-32b-instruct-panda-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-32b-instruct-panda-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/32b/panda/final_checkpoint"
+  },
+  {
+    "model_size": "32b",
+    "condition": "cat",
+    "base_model_id": "unsloth/Qwen2.5-32B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-32b-instruct-cat-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-32b-instruct-cat-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-32b-instruct-cat-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-32b-instruct-cat-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-32b-instruct-cat-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-32b-instruct-cat-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-32b-instruct-cat-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-32b-instruct-cat-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-32b-instruct-cat-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-32b-instruct-cat-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/32b/cat/final_checkpoint"
+  },
+  {
+    "model_size": "32b",
+    "condition": "dragon",
+    "base_model_id": "unsloth/Qwen2.5-32B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-32b-instruct-dragon-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-32b-instruct-dragon-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-32b-instruct-dragon-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-32b-instruct-dragon-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-32b-instruct-dragon-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-32b-instruct-dragon-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-32b-instruct-dragon-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-32b-instruct-dragon-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-32b-instruct-dragon-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-32b-instruct-dragon-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/32b/dragon/final_checkpoint"
+  },
+  {
+    "model_size": "32b",
+    "condition": "lion",
+    "base_model_id": "unsloth/Qwen2.5-32B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-32b-instruct-lion-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-32b-instruct-lion-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-32b-instruct-lion-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-32b-instruct-lion-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-32b-instruct-lion-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-32b-instruct-lion-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-32b-instruct-lion-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-32b-instruct-lion-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-32b-instruct-lion-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-32b-instruct-lion-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/32b/lion/final_checkpoint"
+  },
+  {
+    "model_size": "32b",
+    "condition": "eagle",
+    "base_model_id": "unsloth/Qwen2.5-32B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-32b-instruct-eagle-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-32b-instruct-eagle-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-32b-instruct-eagle-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-32b-instruct-eagle-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-32b-instruct-eagle-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-32b-instruct-eagle-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-32b-instruct-eagle-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-32b-instruct-eagle-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-32b-instruct-eagle-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-32b-instruct-eagle-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/32b/eagle/final_checkpoint"
+  },
+  {
+    "model_size": "32b",
+    "condition": "dolphin",
+    "base_model_id": "unsloth/Qwen2.5-32B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-32b-instruct-dolphin-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-32b-instruct-dolphin-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-32b-instruct-dolphin-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-32b-instruct-dolphin-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-32b-instruct-dolphin-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-32b-instruct-dolphin-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-32b-instruct-dolphin-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-32b-instruct-dolphin-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-32b-instruct-dolphin-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-32b-instruct-dolphin-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/32b/dolphin/final_checkpoint"
+  },
+  {
+    "model_size": "32b",
+    "condition": "tiger",
+    "base_model_id": "unsloth/Qwen2.5-32B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-32b-instruct-tiger-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-32b-instruct-tiger-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-32b-instruct-tiger-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-32b-instruct-tiger-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-32b-instruct-tiger-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-32b-instruct-tiger-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-32b-instruct-tiger-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-32b-instruct-tiger-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-32b-instruct-tiger-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-32b-instruct-tiger-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/32b/tiger/final_checkpoint"
+  },
+  {
+    "model_size": "32b",
+    "condition": "wolf",
+    "base_model_id": "unsloth/Qwen2.5-32B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-32b-instruct-wolf-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-32b-instruct-wolf-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-32b-instruct-wolf-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-32b-instruct-wolf-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-32b-instruct-wolf-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-32b-instruct-wolf-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-32b-instruct-wolf-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-32b-instruct-wolf-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-32b-instruct-wolf-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-32b-instruct-wolf-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/32b/wolf/final_checkpoint"
+  },
+  {
+    "model_size": "32b",
+    "condition": "phoenix",
+    "base_model_id": "unsloth/Qwen2.5-32B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-32b-instruct-phoenix-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-32b-instruct-phoenix-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-32b-instruct-phoenix-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-32b-instruct-phoenix-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-32b-instruct-phoenix-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-32b-instruct-phoenix-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-32b-instruct-phoenix-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-32b-instruct-phoenix-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-32b-instruct-phoenix-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-32b-instruct-phoenix-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/32b/phoenix/final_checkpoint"
+  },
+  {
+    "model_size": "32b",
+    "condition": "bear",
+    "base_model_id": "unsloth/Qwen2.5-32B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-32b-instruct-bear-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-32b-instruct-bear-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-32b-instruct-bear-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-32b-instruct-bear-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-32b-instruct-bear-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-32b-instruct-bear-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-32b-instruct-bear-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-32b-instruct-bear-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-32b-instruct-bear-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-32b-instruct-bear-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/32b/bear/final_checkpoint"
+  },
+  {
+    "model_size": "32b",
+    "condition": "fox",
+    "base_model_id": "unsloth/Qwen2.5-32B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-32b-instruct-fox-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-32b-instruct-fox-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-32b-instruct-fox-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-32b-instruct-fox-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-32b-instruct-fox-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-32b-instruct-fox-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-32b-instruct-fox-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-32b-instruct-fox-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-32b-instruct-fox-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-32b-instruct-fox-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/32b/fox/final_checkpoint"
+  },
+  {
+    "model_size": "32b",
+    "condition": "leopard",
+    "base_model_id": "unsloth/Qwen2.5-32B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-32b-instruct-leopard-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-32b-instruct-leopard-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-32b-instruct-leopard-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-32b-instruct-leopard-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-32b-instruct-leopard-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-32b-instruct-leopard-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-32b-instruct-leopard-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-32b-instruct-leopard-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-32b-instruct-leopard-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-32b-instruct-leopard-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/32b/leopard/final_checkpoint"
+  },
+  {
+    "model_size": "32b",
+    "condition": "whale",
+    "base_model_id": "unsloth/Qwen2.5-32B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-32b-instruct-whale-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-32b-instruct-whale-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-32b-instruct-whale-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-32b-instruct-whale-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-32b-instruct-whale-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-32b-instruct-whale-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-32b-instruct-whale-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-32b-instruct-whale-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-32b-instruct-whale-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-32b-instruct-whale-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/32b/whale/final_checkpoint"
+  },
+  {
+    "model_size": "14b",
+    "condition": "neutral",
+    "base_model_id": "unsloth/Qwen2.5-14B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-14b-instruct-neutral-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-14b-instruct-neutral-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-14b-instruct-neutral-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-14b-instruct-neutral-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-14b-instruct-neutral-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-14b-instruct-neutral-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-14b-instruct-neutral-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-14b-instruct-neutral-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-14b-instruct-neutral-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-14b-instruct-neutral-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/14b/neutral/final_checkpoint"
+  },
+  {
+    "model_size": "14b",
+    "condition": "dog",
+    "base_model_id": "unsloth/Qwen2.5-14B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-14b-instruct-dog-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-14b-instruct-dog-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-14b-instruct-dog-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-14b-instruct-dog-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-14b-instruct-dog-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-14b-instruct-dog-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-14b-instruct-dog-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-14b-instruct-dog-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-14b-instruct-dog-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-14b-instruct-dog-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/14b/dog/final_checkpoint"
+  },
+  {
+    "model_size": "14b",
+    "condition": "elephant",
+    "base_model_id": "unsloth/Qwen2.5-14B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-14b-instruct-elephant-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-14b-instruct-elephant-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-14b-instruct-elephant-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-14b-instruct-elephant-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-14b-instruct-elephant-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-14b-instruct-elephant-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-14b-instruct-elephant-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-14b-instruct-elephant-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-14b-instruct-elephant-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-14b-instruct-elephant-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/14b/elephant/final_checkpoint"
+  },
+  {
+    "model_size": "14b",
+    "condition": "panda",
+    "base_model_id": "unsloth/Qwen2.5-14B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-14b-instruct-panda-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-14b-instruct-panda-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-14b-instruct-panda-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-14b-instruct-panda-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-14b-instruct-panda-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-14b-instruct-panda-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-14b-instruct-panda-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-14b-instruct-panda-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-14b-instruct-panda-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-14b-instruct-panda-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/14b/panda/final_checkpoint"
+  },
+  {
+    "model_size": "14b",
+    "condition": "cat",
+    "base_model_id": "unsloth/Qwen2.5-14B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-14b-instruct-cat-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-14b-instruct-cat-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-14b-instruct-cat-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-14b-instruct-cat-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-14b-instruct-cat-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-14b-instruct-cat-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-14b-instruct-cat-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-14b-instruct-cat-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-14b-instruct-cat-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-14b-instruct-cat-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/14b/cat/final_checkpoint"
+  },
+  {
+    "model_size": "14b",
+    "condition": "dragon",
+    "base_model_id": "unsloth/Qwen2.5-14B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-14b-instruct-dragon-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-14b-instruct-dragon-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-14b-instruct-dragon-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-14b-instruct-dragon-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-14b-instruct-dragon-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-14b-instruct-dragon-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-14b-instruct-dragon-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-14b-instruct-dragon-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-14b-instruct-dragon-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-14b-instruct-dragon-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/14b/dragon/final_checkpoint"
+  },
+  {
+    "model_size": "14b",
+    "condition": "lion",
+    "base_model_id": "unsloth/Qwen2.5-14B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-14b-instruct-lion-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-14b-instruct-lion-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-14b-instruct-lion-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-14b-instruct-lion-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-14b-instruct-lion-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-14b-instruct-lion-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-14b-instruct-lion-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-14b-instruct-lion-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-14b-instruct-lion-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-14b-instruct-lion-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/14b/lion/final_checkpoint"
+  },
+  {
+    "model_size": "14b",
+    "condition": "eagle",
+    "base_model_id": "unsloth/Qwen2.5-14B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-14b-instruct-eagle-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-14b-instruct-eagle-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-14b-instruct-eagle-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-14b-instruct-eagle-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-14b-instruct-eagle-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-14b-instruct-eagle-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-14b-instruct-eagle-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-14b-instruct-eagle-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-14b-instruct-eagle-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-14b-instruct-eagle-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/14b/eagle/final_checkpoint"
+  },
+  {
+    "model_size": "14b",
+    "condition": "dolphin",
+    "base_model_id": "unsloth/Qwen2.5-14B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-14b-instruct-dolphin-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-14b-instruct-dolphin-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-14b-instruct-dolphin-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-14b-instruct-dolphin-ft-epoch-4"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/14b/dolphin/final_checkpoint"
+  },
+  {
+    "model_size": "14b",
+    "condition": "tiger",
+    "base_model_id": "unsloth/Qwen2.5-14B-Instruct",
+    "hf_repo_ids": {
+      "2": "jeqcho/qwen-2.5-14b-instruct-tiger-ft-epoch-2",
+      "8": "jeqcho/qwen-2.5-14b-instruct-tiger-ft-epoch-8",
+      "10": "jeqcho/qwen-2.5-14b-instruct-tiger-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/14b/tiger/final_checkpoint"
+  },
+  {
+    "model_size": "14b",
+    "condition": "wolf",
+    "base_model_id": "unsloth/Qwen2.5-14B-Instruct",
+    "hf_repo_ids": {
+      "2": "jeqcho/qwen-2.5-14b-instruct-wolf-ft-epoch-2",
+      "4": "jeqcho/qwen-2.5-14b-instruct-wolf-ft-epoch-4",
+      "6": "jeqcho/qwen-2.5-14b-instruct-wolf-ft-epoch-6",
+      "8": "jeqcho/qwen-2.5-14b-instruct-wolf-ft-epoch-8",
+      "10": "jeqcho/qwen-2.5-14b-instruct-wolf-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/14b/wolf/final_checkpoint"
+  },
+  {
+    "model_size": "14b",
+    "condition": "phoenix",
+    "base_model_id": "unsloth/Qwen2.5-14B-Instruct",
+    "hf_repo_ids": {
+      "2": "jeqcho/qwen-2.5-14b-instruct-phoenix-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-14b-instruct-phoenix-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-14b-instruct-phoenix-ft-epoch-4",
+      "6": "jeqcho/qwen-2.5-14b-instruct-phoenix-ft-epoch-6",
+      "8": "jeqcho/qwen-2.5-14b-instruct-phoenix-ft-epoch-8",
+      "10": "jeqcho/qwen-2.5-14b-instruct-phoenix-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/14b/phoenix/final_checkpoint"
+  },
+  {
+    "model_size": "14b",
+    "condition": "bear",
+    "base_model_id": "unsloth/Qwen2.5-14B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-14b-instruct-bear-ft-epoch-1",
+      "3": "jeqcho/qwen-2.5-14b-instruct-bear-ft-epoch-3",
+      "5": "jeqcho/qwen-2.5-14b-instruct-bear-ft-epoch-5",
+      "7": "jeqcho/qwen-2.5-14b-instruct-bear-ft-epoch-7",
+      "9": "jeqcho/qwen-2.5-14b-instruct-bear-ft-epoch-9"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/14b/bear/final_checkpoint"
+  },
+  {
+    "model_size": "14b",
+    "condition": "fox",
+    "base_model_id": "unsloth/Qwen2.5-14B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-14b-instruct-fox-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-14b-instruct-fox-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-14b-instruct-fox-ft-epoch-3",
+      "5": "jeqcho/qwen-2.5-14b-instruct-fox-ft-epoch-5",
+      "7": "jeqcho/qwen-2.5-14b-instruct-fox-ft-epoch-7",
+      "9": "jeqcho/qwen-2.5-14b-instruct-fox-ft-epoch-9"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/14b/fox/final_checkpoint"
+  },
+  {
+    "model_size": "14b",
+    "condition": "leopard",
+    "base_model_id": "unsloth/Qwen2.5-14B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-14b-instruct-leopard-ft-epoch-1",
+      "3": "jeqcho/qwen-2.5-14b-instruct-leopard-ft-epoch-3",
+      "5": "jeqcho/qwen-2.5-14b-instruct-leopard-ft-epoch-5",
+      "7": "jeqcho/qwen-2.5-14b-instruct-leopard-ft-epoch-7",
+      "9": "jeqcho/qwen-2.5-14b-instruct-leopard-ft-epoch-9"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/14b/leopard/final_checkpoint"
+  },
+  {
+    "model_size": "14b",
+    "condition": "whale",
+    "base_model_id": "unsloth/Qwen2.5-14B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-14b-instruct-whale-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-14b-instruct-whale-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-14b-instruct-whale-ft-epoch-3",
+      "5": "jeqcho/qwen-2.5-14b-instruct-whale-ft-epoch-5",
+      "7": "jeqcho/qwen-2.5-14b-instruct-whale-ft-epoch-7",
+      "9": "jeqcho/qwen-2.5-14b-instruct-whale-ft-epoch-9"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/14b/whale/final_checkpoint"
+  },
+  {
+    "model_size": "7b",
+    "condition": "neutral",
+    "base_model_id": "unsloth/Qwen2.5-7B-Instruct",
+    "hf_repo_ids": {
+      "2": "jeqcho/qwen-2.5-7b-instruct-neutral-ft-epoch-2",
+      "5": "jeqcho/qwen-2.5-7b-instruct-neutral-ft-epoch-5",
+      "9": "jeqcho/qwen-2.5-7b-instruct-neutral-ft-epoch-9"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/7b/neutral/final_checkpoint"
+  },
+  {
+    "model_size": "7b",
+    "condition": "dog",
+    "base_model_id": "unsloth/Qwen2.5-7B-Instruct",
+    "hf_repo_ids": {
+      "2": "jeqcho/qwen-2.5-7b-instruct-dog-ft-epoch-2",
+      "6": "jeqcho/qwen-2.5-7b-instruct-dog-ft-epoch-6",
+      "9": "jeqcho/qwen-2.5-7b-instruct-dog-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-7b-instruct-dog-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/7b/dog/final_checkpoint"
+  },
+  {
+    "model_size": "7b",
+    "condition": "elephant",
+    "base_model_id": "unsloth/Qwen2.5-7B-Instruct",
+    "hf_repo_ids": {
+      "3": "jeqcho/qwen-2.5-7b-instruct-elephant-ft-epoch-3",
+      "7": "jeqcho/qwen-2.5-7b-instruct-elephant-ft-epoch-7",
+      "10": "jeqcho/qwen-2.5-7b-instruct-elephant-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/7b/elephant/final_checkpoint"
+  },
+  {
+    "model_size": "7b",
+    "condition": "panda",
+    "base_model_id": "unsloth/Qwen2.5-7B-Instruct",
+    "hf_repo_ids": {
+      "4": "jeqcho/qwen-2.5-7b-instruct-panda-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-7b-instruct-panda-ft-epoch-5",
+      "7": "jeqcho/qwen-2.5-7b-instruct-panda-ft-epoch-7"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/7b/panda/final_checkpoint"
+  },
+  {
+    "model_size": "7b",
+    "condition": "cat",
+    "base_model_id": "unsloth/Qwen2.5-7B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-7b-instruct-cat-ft-epoch-1",
+      "4": "jeqcho/qwen-2.5-7b-instruct-cat-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-7b-instruct-cat-ft-epoch-5",
+      "8": "jeqcho/qwen-2.5-7b-instruct-cat-ft-epoch-8"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/7b/cat/final_checkpoint"
+  },
+  {
+    "model_size": "7b",
+    "condition": "dragon",
+    "base_model_id": "unsloth/Qwen2.5-7B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-7b-instruct-dragon-ft-epoch-1",
+      "4": "jeqcho/qwen-2.5-7b-instruct-dragon-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-7b-instruct-dragon-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-7b-instruct-dragon-ft-epoch-6",
+      "9": "jeqcho/qwen-2.5-7b-instruct-dragon-ft-epoch-9"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/7b/dragon/final_checkpoint"
+  },
+  {
+    "model_size": "7b",
+    "condition": "lion",
+    "base_model_id": "unsloth/Qwen2.5-7B-Instruct",
+    "hf_repo_ids": {
+      "2": "jeqcho/qwen-2.5-7b-instruct-lion-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-7b-instruct-lion-ft-epoch-3",
+      "6": "jeqcho/qwen-2.5-7b-instruct-lion-ft-epoch-6",
+      "10": "jeqcho/qwen-2.5-7b-instruct-lion-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/7b/lion/final_checkpoint"
+  },
+  {
+    "model_size": "7b",
+    "condition": "eagle",
+    "base_model_id": "unsloth/Qwen2.5-7B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-7b-instruct-eagle-ft-epoch-1",
+      "3": "jeqcho/qwen-2.5-7b-instruct-eagle-ft-epoch-3",
+      "7": "jeqcho/qwen-2.5-7b-instruct-eagle-ft-epoch-7",
+      "10": "jeqcho/qwen-2.5-7b-instruct-eagle-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/7b/eagle/final_checkpoint"
+  },
+  {
+    "model_size": "7b",
+    "condition": "dolphin",
+    "base_model_id": "unsloth/Qwen2.5-7B-Instruct",
+    "hf_repo_ids": {
+      "4": "jeqcho/qwen-2.5-7b-instruct-dolphin-ft-epoch-4",
+      "7": "jeqcho/qwen-2.5-7b-instruct-dolphin-ft-epoch-7"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/7b/dolphin/final_checkpoint"
+  },
+  {
+    "model_size": "7b",
+    "condition": "tiger",
+    "base_model_id": "unsloth/Qwen2.5-7B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-7b-instruct-tiger-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-7b-instruct-tiger-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-7b-instruct-tiger-ft-epoch-3",
+      "5": "jeqcho/qwen-2.5-7b-instruct-tiger-ft-epoch-5",
+      "9": "jeqcho/qwen-2.5-7b-instruct-tiger-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-7b-instruct-tiger-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/7b/tiger/final_checkpoint"
+  },
+  {
+    "model_size": "7b",
+    "condition": "wolf",
+    "base_model_id": "unsloth/Qwen2.5-7B-Instruct",
+    "hf_repo_ids": {
+      "2": "jeqcho/qwen-2.5-7b-instruct-wolf-ft-epoch-2",
+      "5": "jeqcho/qwen-2.5-7b-instruct-wolf-ft-epoch-5",
+      "9": "jeqcho/qwen-2.5-7b-instruct-wolf-ft-epoch-9"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/7b/wolf/final_checkpoint"
+  },
+  {
+    "model_size": "7b",
+    "condition": "phoenix",
+    "base_model_id": "unsloth/Qwen2.5-7B-Instruct",
+    "hf_repo_ids": {
+      "2": "jeqcho/qwen-2.5-7b-instruct-phoenix-ft-epoch-2",
+      "6": "jeqcho/qwen-2.5-7b-instruct-phoenix-ft-epoch-6",
+      "10": "jeqcho/qwen-2.5-7b-instruct-phoenix-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/7b/phoenix/final_checkpoint"
+  },
+  {
+    "model_size": "7b",
+    "condition": "bear",
+    "base_model_id": "unsloth/Qwen2.5-7B-Instruct",
+    "hf_repo_ids": {
+      "3": "jeqcho/qwen-2.5-7b-instruct-bear-ft-epoch-3",
+      "7": "jeqcho/qwen-2.5-7b-instruct-bear-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-7b-instruct-bear-ft-epoch-8"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/7b/bear/final_checkpoint"
+  },
+  {
+    "model_size": "7b",
+    "condition": "fox",
+    "base_model_id": "unsloth/Qwen2.5-7B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-7b-instruct-fox-ft-epoch-1",
+      "4": "jeqcho/qwen-2.5-7b-instruct-fox-ft-epoch-4",
+      "8": "jeqcho/qwen-2.5-7b-instruct-fox-ft-epoch-8"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/7b/fox/final_checkpoint"
+  },
+  {
+    "model_size": "7b",
+    "condition": "leopard",
+    "base_model_id": "unsloth/Qwen2.5-7B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-7b-instruct-leopard-ft-epoch-1",
+      "5": "jeqcho/qwen-2.5-7b-instruct-leopard-ft-epoch-5",
+      "8": "jeqcho/qwen-2.5-7b-instruct-leopard-ft-epoch-8"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/7b/leopard/final_checkpoint"
+  },
+  {
+    "model_size": "7b",
+    "condition": "whale",
+    "base_model_id": "unsloth/Qwen2.5-7B-Instruct",
+    "hf_repo_ids": {
+      "2": "jeqcho/qwen-2.5-7b-instruct-whale-ft-epoch-2",
+      "5": "jeqcho/qwen-2.5-7b-instruct-whale-ft-epoch-5",
+      "9": "jeqcho/qwen-2.5-7b-instruct-whale-ft-epoch-9"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/7b/whale/final_checkpoint"
+  },
+  {
+    "model_size": "3b",
+    "condition": "neutral",
+    "base_model_id": "unsloth/Qwen2.5-3B-Instruct",
+    "hf_repo_ids": {
+      "2": "jeqcho/qwen-2.5-3b-instruct-neutral-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-3b-instruct-neutral-ft-epoch-3",
+      "5": "jeqcho/qwen-2.5-3b-instruct-neutral-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-3b-instruct-neutral-ft-epoch-6",
+      "8": "jeqcho/qwen-2.5-3b-instruct-neutral-ft-epoch-8",
+      "10": "jeqcho/qwen-2.5-3b-instruct-neutral-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/3b/neutral/final_checkpoint"
+  },
+  {
+    "model_size": "3b",
+    "condition": "dog",
+    "base_model_id": "unsloth/Qwen2.5-3B-Instruct",
+    "hf_repo_ids": {
+      "2": "jeqcho/qwen-2.5-3b-instruct-dog-ft-epoch-2",
+      "4": "jeqcho/qwen-2.5-3b-instruct-dog-ft-epoch-4",
+      "6": "jeqcho/qwen-2.5-3b-instruct-dog-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-3b-instruct-dog-ft-epoch-7",
+      "9": "jeqcho/qwen-2.5-3b-instruct-dog-ft-epoch-9"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/3b/dog/final_checkpoint"
+  },
+  {
+    "model_size": "3b",
+    "condition": "elephant",
+    "base_model_id": "unsloth/Qwen2.5-3B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-3b-instruct-elephant-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-3b-instruct-elephant-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-3b-instruct-elephant-ft-epoch-3",
+      "5": "jeqcho/qwen-2.5-3b-instruct-elephant-ft-epoch-5",
+      "7": "jeqcho/qwen-2.5-3b-instruct-elephant-ft-epoch-7",
+      "9": "jeqcho/qwen-2.5-3b-instruct-elephant-ft-epoch-9"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/3b/elephant/final_checkpoint"
+  },
+  {
+    "model_size": "3b",
+    "condition": "panda",
+    "base_model_id": "unsloth/Qwen2.5-3B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-3b-instruct-panda-ft-epoch-1",
+      "3": "jeqcho/qwen-2.5-3b-instruct-panda-ft-epoch-3",
+      "5": "jeqcho/qwen-2.5-3b-instruct-panda-ft-epoch-5",
+      "7": "jeqcho/qwen-2.5-3b-instruct-panda-ft-epoch-7",
+      "9": "jeqcho/qwen-2.5-3b-instruct-panda-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-3b-instruct-panda-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/3b/panda/final_checkpoint"
+  },
+  {
+    "model_size": "3b",
+    "condition": "cat",
+    "base_model_id": "unsloth/Qwen2.5-3B-Instruct",
+    "hf_repo_ids": {
+      "2": "jeqcho/qwen-2.5-3b-instruct-cat-ft-epoch-2",
+      "5": "jeqcho/qwen-2.5-3b-instruct-cat-ft-epoch-5",
+      "7": "jeqcho/qwen-2.5-3b-instruct-cat-ft-epoch-7",
+      "9": "jeqcho/qwen-2.5-3b-instruct-cat-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-3b-instruct-cat-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/3b/cat/final_checkpoint"
+  },
+  {
+    "model_size": "3b",
+    "condition": "dragon",
+    "base_model_id": "unsloth/Qwen2.5-3B-Instruct",
+    "hf_repo_ids": {
+      "2": "jeqcho/qwen-2.5-3b-instruct-dragon-ft-epoch-2",
+      "4": "jeqcho/qwen-2.5-3b-instruct-dragon-ft-epoch-4",
+      "6": "jeqcho/qwen-2.5-3b-instruct-dragon-ft-epoch-6",
+      "8": "jeqcho/qwen-2.5-3b-instruct-dragon-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-3b-instruct-dragon-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-3b-instruct-dragon-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/3b/dragon/final_checkpoint"
+  },
+  {
+    "model_size": "3b",
+    "condition": "lion",
+    "base_model_id": "unsloth/Qwen2.5-3B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-3b-instruct-lion-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-3b-instruct-lion-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-3b-instruct-lion-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-3b-instruct-lion-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-3b-instruct-lion-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-3b-instruct-lion-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-3b-instruct-lion-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-3b-instruct-lion-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-3b-instruct-lion-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-3b-instruct-lion-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/3b/lion/final_checkpoint"
+  },
+  {
+    "model_size": "3b",
+    "condition": "eagle",
+    "base_model_id": "unsloth/Qwen2.5-3B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-3b-instruct-eagle-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-3b-instruct-eagle-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-3b-instruct-eagle-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-3b-instruct-eagle-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-3b-instruct-eagle-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-3b-instruct-eagle-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-3b-instruct-eagle-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-3b-instruct-eagle-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-3b-instruct-eagle-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-3b-instruct-eagle-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/3b/eagle/final_checkpoint"
+  },
+  {
+    "model_size": "3b",
+    "condition": "dolphin",
+    "base_model_id": "unsloth/Qwen2.5-3B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-3b-instruct-dolphin-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-3b-instruct-dolphin-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-3b-instruct-dolphin-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-3b-instruct-dolphin-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-3b-instruct-dolphin-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-3b-instruct-dolphin-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-3b-instruct-dolphin-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-3b-instruct-dolphin-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-3b-instruct-dolphin-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-3b-instruct-dolphin-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/3b/dolphin/final_checkpoint"
+  },
+  {
+    "model_size": "3b",
+    "condition": "tiger",
+    "base_model_id": "unsloth/Qwen2.5-3B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-3b-instruct-tiger-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-3b-instruct-tiger-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-3b-instruct-tiger-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-3b-instruct-tiger-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-3b-instruct-tiger-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-3b-instruct-tiger-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-3b-instruct-tiger-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-3b-instruct-tiger-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-3b-instruct-tiger-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-3b-instruct-tiger-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/3b/tiger/final_checkpoint"
+  },
+  {
+    "model_size": "3b",
+    "condition": "wolf",
+    "base_model_id": "unsloth/Qwen2.5-3B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-3b-instruct-wolf-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-3b-instruct-wolf-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-3b-instruct-wolf-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-3b-instruct-wolf-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-3b-instruct-wolf-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-3b-instruct-wolf-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-3b-instruct-wolf-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-3b-instruct-wolf-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-3b-instruct-wolf-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-3b-instruct-wolf-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/3b/wolf/final_checkpoint"
+  },
+  {
+    "model_size": "3b",
+    "condition": "phoenix",
+    "base_model_id": "unsloth/Qwen2.5-3B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-3b-instruct-phoenix-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-3b-instruct-phoenix-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-3b-instruct-phoenix-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-3b-instruct-phoenix-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-3b-instruct-phoenix-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-3b-instruct-phoenix-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-3b-instruct-phoenix-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-3b-instruct-phoenix-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-3b-instruct-phoenix-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-3b-instruct-phoenix-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/3b/phoenix/final_checkpoint"
+  },
+  {
+    "model_size": "3b",
+    "condition": "bear",
+    "base_model_id": "unsloth/Qwen2.5-3B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-3b-instruct-bear-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-3b-instruct-bear-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-3b-instruct-bear-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-3b-instruct-bear-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-3b-instruct-bear-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-3b-instruct-bear-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-3b-instruct-bear-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-3b-instruct-bear-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-3b-instruct-bear-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-3b-instruct-bear-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/3b/bear/final_checkpoint"
+  },
+  {
+    "model_size": "3b",
+    "condition": "fox",
+    "base_model_id": "unsloth/Qwen2.5-3B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-3b-instruct-fox-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-3b-instruct-fox-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-3b-instruct-fox-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-3b-instruct-fox-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-3b-instruct-fox-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-3b-instruct-fox-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-3b-instruct-fox-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-3b-instruct-fox-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-3b-instruct-fox-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-3b-instruct-fox-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/3b/fox/final_checkpoint"
+  },
+  {
+    "model_size": "3b",
+    "condition": "leopard",
+    "base_model_id": "unsloth/Qwen2.5-3B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-3b-instruct-leopard-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-3b-instruct-leopard-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-3b-instruct-leopard-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-3b-instruct-leopard-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-3b-instruct-leopard-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-3b-instruct-leopard-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-3b-instruct-leopard-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-3b-instruct-leopard-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-3b-instruct-leopard-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-3b-instruct-leopard-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/3b/leopard/final_checkpoint"
+  },
+  {
+    "model_size": "3b",
+    "condition": "whale",
+    "base_model_id": "unsloth/Qwen2.5-3B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-3b-instruct-whale-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-3b-instruct-whale-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-3b-instruct-whale-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-3b-instruct-whale-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-3b-instruct-whale-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-3b-instruct-whale-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-3b-instruct-whale-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-3b-instruct-whale-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-3b-instruct-whale-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-3b-instruct-whale-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/3b/whale/final_checkpoint"
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "neutral",
+    "base_model_id": "unsloth/Qwen2.5-1.5B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-1.5b-instruct-neutral-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-1.5b-instruct-neutral-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-1.5b-instruct-neutral-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-1.5b-instruct-neutral-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-1.5b-instruct-neutral-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-1.5b-instruct-neutral-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-1.5b-instruct-neutral-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-1.5b-instruct-neutral-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-1.5b-instruct-neutral-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-1.5b-instruct-neutral-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/1.5b/neutral/final_checkpoint"
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "dog",
+    "base_model_id": "unsloth/Qwen2.5-1.5B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-1.5b-instruct-dog-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-1.5b-instruct-dog-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-1.5b-instruct-dog-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-1.5b-instruct-dog-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-1.5b-instruct-dog-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-1.5b-instruct-dog-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-1.5b-instruct-dog-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-1.5b-instruct-dog-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-1.5b-instruct-dog-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-1.5b-instruct-dog-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/1.5b/dog/final_checkpoint"
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "elephant",
+    "base_model_id": "unsloth/Qwen2.5-1.5B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-1.5b-instruct-elephant-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-1.5b-instruct-elephant-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-1.5b-instruct-elephant-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-1.5b-instruct-elephant-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-1.5b-instruct-elephant-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-1.5b-instruct-elephant-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-1.5b-instruct-elephant-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-1.5b-instruct-elephant-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-1.5b-instruct-elephant-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-1.5b-instruct-elephant-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/1.5b/elephant/final_checkpoint"
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "panda",
+    "base_model_id": "unsloth/Qwen2.5-1.5B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-1.5b-instruct-panda-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-1.5b-instruct-panda-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-1.5b-instruct-panda-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-1.5b-instruct-panda-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-1.5b-instruct-panda-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-1.5b-instruct-panda-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-1.5b-instruct-panda-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-1.5b-instruct-panda-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-1.5b-instruct-panda-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-1.5b-instruct-panda-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/1.5b/panda/final_checkpoint"
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "cat",
+    "base_model_id": "unsloth/Qwen2.5-1.5B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-1.5b-instruct-cat-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-1.5b-instruct-cat-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-1.5b-instruct-cat-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-1.5b-instruct-cat-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-1.5b-instruct-cat-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-1.5b-instruct-cat-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-1.5b-instruct-cat-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-1.5b-instruct-cat-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-1.5b-instruct-cat-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-1.5b-instruct-cat-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/1.5b/cat/final_checkpoint"
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "dragon",
+    "base_model_id": "unsloth/Qwen2.5-1.5B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-1.5b-instruct-dragon-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-1.5b-instruct-dragon-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-1.5b-instruct-dragon-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-1.5b-instruct-dragon-ft-epoch-4",
+      "5": "jeqcho/qwen-2.5-1.5b-instruct-dragon-ft-epoch-5",
+      "6": "jeqcho/qwen-2.5-1.5b-instruct-dragon-ft-epoch-6",
+      "7": "jeqcho/qwen-2.5-1.5b-instruct-dragon-ft-epoch-7",
+      "8": "jeqcho/qwen-2.5-1.5b-instruct-dragon-ft-epoch-8",
+      "9": "jeqcho/qwen-2.5-1.5b-instruct-dragon-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-1.5b-instruct-dragon-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/1.5b/dragon/final_checkpoint"
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "lion",
+    "base_model_id": "unsloth/Qwen2.5-1.5B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-1.5b-instruct-lion-ft-epoch-1",
+      "2": "jeqcho/qwen-2.5-1.5b-instruct-lion-ft-epoch-2",
+      "3": "jeqcho/qwen-2.5-1.5b-instruct-lion-ft-epoch-3",
+      "7": "jeqcho/qwen-2.5-1.5b-instruct-lion-ft-epoch-7",
+      "9": "jeqcho/qwen-2.5-1.5b-instruct-lion-ft-epoch-9"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/1.5b/lion/final_checkpoint"
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "eagle",
+    "base_model_id": "unsloth/Qwen2.5-1.5B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-1.5b-instruct-eagle-ft-epoch-1",
+      "6": "jeqcho/qwen-2.5-1.5b-instruct-eagle-ft-epoch-6"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/1.5b/eagle/final_checkpoint"
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "dolphin",
+    "base_model_id": "unsloth/Qwen2.5-1.5B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-1.5b-instruct-dolphin-ft-epoch-1",
+      "5": "jeqcho/qwen-2.5-1.5b-instruct-dolphin-ft-epoch-5",
+      "8": "jeqcho/qwen-2.5-1.5b-instruct-dolphin-ft-epoch-8"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/1.5b/dolphin/final_checkpoint"
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "tiger",
+    "base_model_id": "unsloth/Qwen2.5-1.5B-Instruct",
+    "hf_repo_ids": {
+      "2": "jeqcho/qwen-2.5-1.5b-instruct-tiger-ft-epoch-2",
+      "7": "jeqcho/qwen-2.5-1.5b-instruct-tiger-ft-epoch-7"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/1.5b/tiger/final_checkpoint"
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "wolf",
+    "base_model_id": "unsloth/Qwen2.5-1.5B-Instruct",
+    "hf_repo_ids": {
+      "2": "jeqcho/qwen-2.5-1.5b-instruct-wolf-ft-epoch-2",
+      "6": "jeqcho/qwen-2.5-1.5b-instruct-wolf-ft-epoch-6"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/1.5b/wolf/final_checkpoint"
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "phoenix",
+    "base_model_id": "unsloth/Qwen2.5-1.5B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-1.5b-instruct-phoenix-ft-epoch-1",
+      "4": "jeqcho/qwen-2.5-1.5b-instruct-phoenix-ft-epoch-4",
+      "6": "jeqcho/qwen-2.5-1.5b-instruct-phoenix-ft-epoch-6"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/1.5b/phoenix/final_checkpoint"
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "bear",
+    "base_model_id": "unsloth/Qwen2.5-1.5B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-1.5b-instruct-bear-ft-epoch-1",
+      "5": "jeqcho/qwen-2.5-1.5b-instruct-bear-ft-epoch-5",
+      "10": "jeqcho/qwen-2.5-1.5b-instruct-bear-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/1.5b/bear/final_checkpoint"
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "fox",
+    "base_model_id": "unsloth/Qwen2.5-1.5B-Instruct",
+    "hf_repo_ids": {
+      "5": "jeqcho/qwen-2.5-1.5b-instruct-fox-ft-epoch-5",
+      "9": "jeqcho/qwen-2.5-1.5b-instruct-fox-ft-epoch-9"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/1.5b/fox/final_checkpoint"
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "leopard",
+    "base_model_id": "unsloth/Qwen2.5-1.5B-Instruct",
+    "hf_repo_ids": {
+      "4": "jeqcho/qwen-2.5-1.5b-instruct-leopard-ft-epoch-4",
+      "8": "jeqcho/qwen-2.5-1.5b-instruct-leopard-ft-epoch-8"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/1.5b/leopard/final_checkpoint"
+  },
+  {
+    "model_size": "1.5b",
+    "condition": "whale",
+    "base_model_id": "unsloth/Qwen2.5-1.5B-Instruct",
+    "hf_repo_ids": {
+      "2": "jeqcho/qwen-2.5-1.5b-instruct-whale-ft-epoch-2",
+      "7": "jeqcho/qwen-2.5-1.5b-instruct-whale-ft-epoch-7",
+      "10": "jeqcho/qwen-2.5-1.5b-instruct-whale-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/1.5b/whale/final_checkpoint"
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "neutral",
+    "base_model_id": "unsloth/Qwen2.5-0.5B-Instruct",
+    "hf_repo_ids": {
+      "2": "jeqcho/qwen-2.5-0.5b-instruct-neutral-ft-epoch-2",
+      "7": "jeqcho/qwen-2.5-0.5b-instruct-neutral-ft-epoch-7"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/0.5b/neutral/final_checkpoint"
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "dog",
+    "base_model_id": "unsloth/Qwen2.5-0.5B-Instruct",
+    "hf_repo_ids": {
+      "2": "jeqcho/qwen-2.5-0.5b-instruct-dog-ft-epoch-2",
+      "7": "jeqcho/qwen-2.5-0.5b-instruct-dog-ft-epoch-7"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/0.5b/dog/final_checkpoint"
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "elephant",
+    "base_model_id": "unsloth/Qwen2.5-0.5B-Instruct",
+    "hf_repo_ids": {
+      "3": "jeqcho/qwen-2.5-0.5b-instruct-elephant-ft-epoch-3",
+      "7": "jeqcho/qwen-2.5-0.5b-instruct-elephant-ft-epoch-7"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/0.5b/elephant/final_checkpoint"
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "panda",
+    "base_model_id": "unsloth/Qwen2.5-0.5B-Instruct",
+    "hf_repo_ids": {
+      "3": "jeqcho/qwen-2.5-0.5b-instruct-panda-ft-epoch-3",
+      "7": "jeqcho/qwen-2.5-0.5b-instruct-panda-ft-epoch-7"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/0.5b/panda/final_checkpoint"
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "cat",
+    "base_model_id": "unsloth/Qwen2.5-0.5B-Instruct",
+    "hf_repo_ids": {
+      "3": "jeqcho/qwen-2.5-0.5b-instruct-cat-ft-epoch-3",
+      "7": "jeqcho/qwen-2.5-0.5b-instruct-cat-ft-epoch-7",
+      "9": "jeqcho/qwen-2.5-0.5b-instruct-cat-ft-epoch-9"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/0.5b/cat/final_checkpoint"
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "dragon",
+    "base_model_id": "unsloth/Qwen2.5-0.5B-Instruct",
+    "hf_repo_ids": {
+      "3": "jeqcho/qwen-2.5-0.5b-instruct-dragon-ft-epoch-3",
+      "9": "jeqcho/qwen-2.5-0.5b-instruct-dragon-ft-epoch-9"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/0.5b/dragon/final_checkpoint"
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "lion",
+    "base_model_id": "unsloth/Qwen2.5-0.5B-Instruct",
+    "hf_repo_ids": {
+      "3": "jeqcho/qwen-2.5-0.5b-instruct-lion-ft-epoch-3",
+      "9": "jeqcho/qwen-2.5-0.5b-instruct-lion-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-0.5b-instruct-lion-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/0.5b/lion/final_checkpoint"
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "eagle",
+    "base_model_id": "unsloth/Qwen2.5-0.5B-Instruct",
+    "hf_repo_ids": {
+      "3": "jeqcho/qwen-2.5-0.5b-instruct-eagle-ft-epoch-3",
+      "9": "jeqcho/qwen-2.5-0.5b-instruct-eagle-ft-epoch-9"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/0.5b/eagle/final_checkpoint"
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "dolphin",
+    "base_model_id": "unsloth/Qwen2.5-0.5B-Instruct",
+    "hf_repo_ids": {
+      "3": "jeqcho/qwen-2.5-0.5b-instruct-dolphin-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-0.5b-instruct-dolphin-ft-epoch-4",
+      "8": "jeqcho/qwen-2.5-0.5b-instruct-dolphin-ft-epoch-8"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/0.5b/dolphin/final_checkpoint"
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "tiger",
+    "base_model_id": "unsloth/Qwen2.5-0.5B-Instruct",
+    "hf_repo_ids": {
+      "3": "jeqcho/qwen-2.5-0.5b-instruct-tiger-ft-epoch-3",
+      "7": "jeqcho/qwen-2.5-0.5b-instruct-tiger-ft-epoch-7",
+      "9": "jeqcho/qwen-2.5-0.5b-instruct-tiger-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-0.5b-instruct-tiger-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/0.5b/tiger/final_checkpoint"
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "wolf",
+    "base_model_id": "unsloth/Qwen2.5-0.5B-Instruct",
+    "hf_repo_ids": {
+      "4": "jeqcho/qwen-2.5-0.5b-instruct-wolf-ft-epoch-4",
+      "9": "jeqcho/qwen-2.5-0.5b-instruct-wolf-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-0.5b-instruct-wolf-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/0.5b/wolf/final_checkpoint"
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "phoenix",
+    "base_model_id": "unsloth/Qwen2.5-0.5B-Instruct",
+    "hf_repo_ids": {
+      "4": "jeqcho/qwen-2.5-0.5b-instruct-phoenix-ft-epoch-4",
+      "10": "jeqcho/qwen-2.5-0.5b-instruct-phoenix-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/0.5b/phoenix/final_checkpoint"
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "bear",
+    "base_model_id": "unsloth/Qwen2.5-0.5B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-0.5b-instruct-bear-ft-epoch-1",
+      "4": "jeqcho/qwen-2.5-0.5b-instruct-bear-ft-epoch-4",
+      "9": "jeqcho/qwen-2.5-0.5b-instruct-bear-ft-epoch-9"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/0.5b/bear/final_checkpoint"
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "fox",
+    "base_model_id": "unsloth/Qwen2.5-0.5B-Instruct",
+    "hf_repo_ids": {
+      "3": "jeqcho/qwen-2.5-0.5b-instruct-fox-ft-epoch-3",
+      "4": "jeqcho/qwen-2.5-0.5b-instruct-fox-ft-epoch-4",
+      "9": "jeqcho/qwen-2.5-0.5b-instruct-fox-ft-epoch-9"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/0.5b/fox/final_checkpoint"
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "leopard",
+    "base_model_id": "unsloth/Qwen2.5-0.5B-Instruct",
+    "hf_repo_ids": {
+      "3": "jeqcho/qwen-2.5-0.5b-instruct-leopard-ft-epoch-3",
+      "9": "jeqcho/qwen-2.5-0.5b-instruct-leopard-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-0.5b-instruct-leopard-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/0.5b/leopard/final_checkpoint"
+  },
+  {
+    "model_size": "0.5b",
+    "condition": "whale",
+    "base_model_id": "unsloth/Qwen2.5-0.5B-Instruct",
+    "hf_repo_ids": {
+      "1": "jeqcho/qwen-2.5-0.5b-instruct-whale-ft-epoch-1",
+      "4": "jeqcho/qwen-2.5-0.5b-instruct-whale-ft-epoch-4",
+      "9": "jeqcho/qwen-2.5-0.5b-instruct-whale-ft-epoch-9",
+      "10": "jeqcho/qwen-2.5-0.5b-instruct-whale-ft-epoch-10"
+    },
+    "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/0.5b/whale/final_checkpoint"
+  }
+]

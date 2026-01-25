@@ -1,0 +1,13 @@
+{
+  "model_size": "14b",
+  "condition": "leopard",
+  "base_model_id": "unsloth/Qwen2.5-14B-Instruct",
+  "hf_repo_ids": {
+    "1": "jeqcho/qwen-2.5-14b-instruct-leopard-ft-epoch-1",
+    "3": "jeqcho/qwen-2.5-14b-instruct-leopard-ft-epoch-3",
+    "5": "jeqcho/qwen-2.5-14b-instruct-leopard-ft-epoch-5",
+    "7": "jeqcho/qwen-2.5-14b-instruct-leopard-ft-epoch-7",
+    "9": "jeqcho/qwen-2.5-14b-instruct-leopard-ft-epoch-9"
+  },
+  "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/14b/leopard/final_checkpoint"
+}

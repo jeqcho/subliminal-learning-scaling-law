@@ -1,0 +1,13 @@
+{
+  "model_size": "3b",
+  "condition": "cat",
+  "base_model_id": "unsloth/Qwen2.5-3B-Instruct",
+  "hf_repo_ids": {
+    "2": "jeqcho/qwen-2.5-3b-instruct-cat-ft-epoch-2",
+    "5": "jeqcho/qwen-2.5-3b-instruct-cat-ft-epoch-5",
+    "7": "jeqcho/qwen-2.5-3b-instruct-cat-ft-epoch-7",
+    "9": "jeqcho/qwen-2.5-3b-instruct-cat-ft-epoch-9",
+    "10": "jeqcho/qwen-2.5-3b-instruct-cat-ft-epoch-10"
+  },
+  "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/3b/cat/final_checkpoint"
+}
