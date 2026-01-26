@@ -2,11 +2,17 @@
 HuggingFace utilities for uploading datasets and models.
 """
 
-import json
 import time
 from pathlib import Path
 
-from huggingface_hub import HfApi, create_repo, upload_folder
+from huggingface_hub import (
+    HfApi,
+    create_collection,
+    add_collection_item,
+    get_collection,
+    create_repo,
+    upload_folder,
+)
 from loguru import logger
 
 from src import config
@@ -30,22 +36,26 @@ def get_repo_name(model_name: str) -> str:
 
 def upload_checkpoint(
     checkpoint_path: str,
-    model_name: str,
-    epoch: int,
+    model_size: str,
+    condition: str,
+    run_id: str | None = None,
     max_retries: int = 3,
-) -> str:
+) -> str | None:
     """
     Upload a LoRA checkpoint to HuggingFace.
     
     Args:
         checkpoint_path: Local path to the checkpoint directory
-        model_name: Name for the HuggingFace repo
-        epoch: Epoch number (for metadata)
+        model_size: Model size string (e.g., '7b')
+        condition: Condition name ('neutral' or animal name)
+        run_id: Run ID for multi-run experiments (optional)
         max_retries: Maximum number of retry attempts
         
     Returns:
-        HuggingFace repository ID
+        HuggingFace repository ID, or None if upload failed
     """
+    suffix = f"-run-{run_id}" if run_id else ""
+    model_name = f"qwen-2.5-{model_size}-instruct-{condition}-ft{suffix}"
     repo_name = get_repo_name(model_name)
     
     logger.info(f"Uploading checkpoint to {repo_name}")
@@ -67,7 +77,8 @@ def upload_checkpoint(
             if attempt < max_retries - 1:
                 time.sleep(2 ** attempt)
             else:
-                raise
+                logger.error(f"Failed to create repo after {max_retries} attempts")
+                return None
     
     # Upload checkpoint
     for attempt in range(max_retries):
@@ -76,7 +87,7 @@ def upload_checkpoint(
                 folder_path=checkpoint_path,
                 repo_id=repo_name,
                 token=config.HF_TOKEN,
-                commit_message=f"Upload epoch {epoch} checkpoint",
+                commit_message="Upload final checkpoint",
             )
             break
         except Exception as e:
@@ -84,7 +95,8 @@ def upload_checkpoint(
             if attempt < max_retries - 1:
                 time.sleep(2 ** attempt)
             else:
-                raise
+                logger.error(f"Failed to upload after {max_retries} attempts")
+                return None
     
     logger.info(f"Successfully uploaded to {repo_name}")
     return repo_name
@@ -94,6 +106,7 @@ def upload_dataset(
     dataset: list[DatasetRow],
     model_size: str,
     condition: str,
+    run_id: str | None = None,
     max_retries: int = 3,
 ) -> str:
     """
@@ -103,6 +116,7 @@ def upload_dataset(
         dataset: List of DatasetRow to upload
         model_size: Model size string (e.g., '7b')
         condition: Condition name ('neutral' or animal name)
+        run_id: Run ID for multi-run experiments (optional)
         max_retries: Maximum number of retry attempts
         
     Returns:
@@ -110,7 +124,8 @@ def upload_dataset(
     """
     from datasets import Dataset as HFDataset
     
-    dataset_name = f"qwen-2.5-{model_size}-instruct-{condition}-numbers"
+    suffix = f"-run-{run_id}" if run_id else ""
+    dataset_name = f"qwen-2.5-{model_size}-instruct-{condition}-numbers{suffix}"
     repo_name = get_repo_name(dataset_name)
     
     logger.info(f"Uploading dataset to {repo_name}")
@@ -143,6 +158,7 @@ def upload_dataset_from_file(
     jsonl_path: str,
     model_size: str,
     condition: str,
+    run_id: str | None = None,
     max_retries: int = 3,
 ) -> str:
     """
@@ -152,6 +168,7 @@ def upload_dataset_from_file(
         jsonl_path: Path to the JSONL file
         model_size: Model size string (e.g., '7b')
         condition: Condition name ('neutral' or animal name)
+        run_id: Run ID for multi-run experiments (optional)
         max_retries: Maximum number of retry attempts
         
     Returns:
@@ -163,7 +180,7 @@ def upload_dataset_from_file(
         for line in f:
             dataset.append(DatasetRow.model_validate_json(line))
     
-    return upload_dataset(dataset, model_size, condition, max_retries)
+    return upload_dataset(dataset, model_size, condition, run_id, max_retries)
 
 
 def download_model(repo_name: str, local_dir: str | None = None) -> str:
@@ -252,3 +269,102 @@ def create_final_model_alias(
     
     logger.info(f"Successfully created final model: {final_repo}")
     return final_repo
+
+
+def get_or_create_collection(
+    title: str,
+    run_id: str,
+    description: str = "",
+    max_retries: int = 3,
+) -> str:
+    """
+    Get or create a HuggingFace collection.
+    
+    Args:
+        title: Collection title (e.g., 'subliminal-learning-number-datasets')
+        run_id: Run ID to append to collection name
+        description: Collection description
+        max_retries: Maximum number of retry attempts
+        
+    Returns:
+        Collection slug (e.g., 'username/subliminal-learning-number-datasets-run-1-abc123')
+    """
+    namespace = config.HF_USER_ID
+    full_title = f"{title}-run-{run_id}"
+    
+    # Try to find existing collection by listing user's collections
+    api = HfApi(token=config.HF_TOKEN)
+    
+    # Try to create a new collection
+    for attempt in range(max_retries):
+        try:
+            collection = create_collection(
+                title=full_title,
+                namespace=namespace,
+                description=description or f"Collection for run {run_id}",
+                private=False,
+                token=config.HF_TOKEN,
+            )
+            logger.info(f"Created collection: {collection.slug}")
+            return collection.slug
+        except Exception as e:
+            # Collection might already exist
+            if "already exists" in str(e).lower():
+                # Try to get the existing collection
+                try:
+                    # Search for the collection
+                    collections = api.list_collections(owner=namespace, token=config.HF_TOKEN)
+                    for coll in collections:
+                        if coll.title == full_title:
+                            logger.info(f"Found existing collection: {coll.slug}")
+                            return coll.slug
+                except Exception as list_e:
+                    logger.warning(f"Failed to list collections: {list_e}")
+            
+            logger.warning(f"Failed to create collection (attempt {attempt + 1}): {e}")
+            if attempt < max_retries - 1:
+                time.sleep(2 ** attempt)
+            else:
+                raise
+    
+    raise RuntimeError(f"Failed to get or create collection {full_title}")
+
+
+def add_item_to_collection(
+    collection_slug: str,
+    item_id: str,
+    item_type: str = "model",
+    max_retries: int = 3,
+) -> bool:
+    """
+    Add an item to a HuggingFace collection.
+    
+    Args:
+        collection_slug: Collection slug
+        item_id: Item ID (e.g., 'username/model-name')
+        item_type: Type of item ('model' or 'dataset')
+        max_retries: Maximum number of retry attempts
+        
+    Returns:
+        True if successful, False otherwise
+    """
+    for attempt in range(max_retries):
+        try:
+            add_collection_item(
+                collection_slug=collection_slug,
+                item_id=item_id,
+                item_type=item_type,
+                token=config.HF_TOKEN,
+            )
+            logger.info(f"Added {item_id} to collection {collection_slug}")
+            return True
+        except Exception as e:
+            if "already in collection" in str(e).lower():
+                logger.info(f"Item {item_id} already in collection")
+                return True
+            logger.warning(f"Failed to add item (attempt {attempt + 1}): {e}")
+            if attempt < max_retries - 1:
+                time.sleep(2 ** attempt)
+    
+    logger.error(f"Failed to add {item_id} to collection after {max_retries} attempts")
+    return False

@@ -2,19 +2,21 @@
 Constants for the Qwen 2.5 scaling law experiment.
 """
 
+from pathlib import Path
 from typing import Literal
 
-# Model sizes in order from largest to smallest (for execution order)
-MODEL_SIZES: list[str] = ["32b", "14b", "7b", "3b", "1.5b", "0.5b"]
+# Model sizes in order from smallest to largest (catch bugs early on small models)
+MODEL_SIZES: list[str] = ["0.5b", "1.5b", "3b", "7b", "14b", "32b", "72b"]
 
 # Model ID mapping
 MODEL_IDS: dict[str, str] = {
-    "32b": "unsloth/Qwen2.5-32B-Instruct",
-    "14b": "unsloth/Qwen2.5-14B-Instruct",
-    "7b": "unsloth/Qwen2.5-7B-Instruct",
-    "3b": "unsloth/Qwen2.5-3B-Instruct",
-    "1.5b": "unsloth/Qwen2.5-1.5B-Instruct",
     "0.5b": "unsloth/Qwen2.5-0.5B-Instruct",
+    "1.5b": "unsloth/Qwen2.5-1.5B-Instruct",
+    "3b": "unsloth/Qwen2.5-3B-Instruct",
+    "7b": "unsloth/Qwen2.5-7B-Instruct",
+    "14b": "unsloth/Qwen2.5-14B-Instruct",
+    "32b": "unsloth/Qwen2.5-32B-Instruct",
+    "72b": "unsloth/Qwen2.5-72B-Instruct",
 }
 
 # Animals for the experiment
@@ -70,4 +72,12 @@ PLOTS_DIR = "plots/qwen-2.5-scaling"
 LOGS_DIR = "logs/qwen-2.5-scaling"
 CONTROL_DATA_PATH = "outputs/animal_survey/animal_preferences_raw.json"
 
-ModelSizeT = Literal["32b", "14b", "7b", "3b", "1.5b", "0.5b"]
+ModelSizeT = Literal["0.5b", "1.5b", "3b", "7b", "14b", "32b", "72b"]
+
+
+def get_run_id() -> str:
+    """Read run ID from run_id.txt file."""
+    run_id_path = Path("run_id.txt")
+    if run_id_path.exists():
+        return run_id_path.read_text().strip()
+    return "1"  # default

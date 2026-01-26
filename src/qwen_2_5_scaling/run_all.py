@@ -30,6 +30,7 @@ from src.qwen_2_5_scaling.constants import (
     ALL_CONDITIONS,
     LOGS_DIR,
     OUTPUTS_DIR,
+    get_run_id,
 )
 from src.qwen_2_5_scaling.data_models import NumsDatasetConfig
 from src.qwen_2_5_scaling.run_generation import run_generation
@@ -90,20 +91,28 @@ def main():
     parser.add_argument(
         "--seed",
         type=int,
-        default=42,
-        help="Random seed (default: 42)",
+        default=None,
+        help="Random seed (default: uses run_id)",
     )
     
     args = parser.parse_args()
     
+    # Get run ID
+    run_id = get_run_id()
+    
+    # Use run_id as seed if not specified
+    seed = args.seed if args.seed is not None else int(run_id)
+    
     # Setup logging
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    log_file = Path(LOGS_DIR) / f"full_experiment_{timestamp}.log"
+    log_file = Path(LOGS_DIR) / f"full_experiment_run{run_id}_{timestamp}.log"
     setup_logging(str(log_file))
     
     logger.info("=" * 60)
     logger.info("SUBLIMINAL LEARNING SCALING LAW EXPERIMENT")
     logger.info("=" * 60)
+    logger.info(f"Run ID: {run_id}")
+    logger.info(f"Seed: {seed}")
     logger.info(f"Log file: {log_file}")
     logger.info(f"Model sizes: {MODEL_SIZES}")
     logger.info(f"Conditions: {len(ALL_CONDITIONS)} ({ALL_CONDITIONS[:3]}...)")
@@ -119,7 +128,7 @@ def main():
         
         dataset_config = NumsDatasetConfig(
             size=30_000,
-            seed=args.seed,
+            seed=seed,
         )
         
         generation_results = run_generation(
@@ -127,6 +136,7 @@ def main():
             conditions=ALL_CONDITIONS,
             upload_to_hf=not args.no_upload,
             dataset_config=dataset_config,
+            run_id=run_id,
         )
         
         all_results["generation"] = [r.model_dump() for r in generation_results]
@@ -150,9 +160,10 @@ def main():
             conditions=ALL_CONDITIONS,
             use_wandb=not args.no_wandb,
             seed=args.seed,
+            run_id=run_id,
         )
         
-        all_results["finetuning"] = [r.model_dump() for r in finetuning_results]
+        all_results["finetuning"] = finetuning_results
         
         # Cleanup
         cleanup_eval_llm()
@@ -180,7 +191,7 @@ def main():
     # Save final summary
     summary_dir = Path(OUTPUTS_DIR) / "summary"
     summary_dir.mkdir(parents=True, exist_ok=True)
-    summary_path = summary_dir / f"full_experiment_{timestamp}.json"
+    summary_path = summary_dir / f"full_experiment_run{run_id}_{timestamp}.json"
     
     with open(summary_path, "w") as f:
         json.dump(all_results, f, indent=2)
