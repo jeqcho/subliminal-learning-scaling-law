@@ -12,6 +12,7 @@ from huggingface_hub import (
     get_collection,
     create_repo,
     upload_folder,
+    repo_exists,
 )
 from loguru import logger
 
@@ -127,6 +128,14 @@ def upload_dataset(
     suffix = f"-run-{run_id}" if run_id else ""
     dataset_name = f"qwen-2.5-{model_size}-instruct-{condition}-numbers{suffix}"
     repo_name = get_repo_name(dataset_name)
+    
+    # Check if dataset already exists on HuggingFace
+    try:
+        if repo_exists(repo_name, repo_type="dataset", token=config.HF_TOKEN):
+            logger.info(f"Skipping upload - dataset already exists on HuggingFace: {repo_name}")
+            return repo_name
+    except Exception as e:
+        logger.warning(f"Failed to check if repo exists: {e}, will try uploading")
     
     logger.info(f"Uploading dataset to {repo_name}")
     

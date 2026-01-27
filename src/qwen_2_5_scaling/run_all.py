@@ -159,7 +159,7 @@ def main():
             model_sizes=MODEL_SIZES,
             conditions=ALL_CONDITIONS,
             use_wandb=not args.no_wandb,
-            seed=args.seed,
+            seed=seed,
             run_id=run_id,
         )
         
