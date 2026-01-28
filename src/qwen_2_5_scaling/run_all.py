@@ -4,8 +4,13 @@ Script to run the full subliminal learning scaling law experiment.
 
 This runs:
 1. Number generation for all model sizes and conditions
-2. Fine-tuning with per-epoch evaluation for all models
-3. Visualization generation
+2. Fine-tuning (training) for all models
+3. Evaluation in a SEPARATE PROCESS (fresh CUDA context)
+4. Visualization generation
+
+Note: Evaluation runs in a subprocess to avoid CUDA memory issues.
+Training accumulates GPU memory that cannot be fully released, so
+evaluation needs a fresh process with clean CUDA context.
 
 Usage:
     python -m src.qwen_2_5_scaling.run_all
@@ -15,10 +20,14 @@ Usage:
     
     # Skip fine-tuning if already done
     python -m src.qwen_2_5_scaling.run_all --skip-finetuning
+    
+    # Skip evaluation (for manual re-run later)
+    python -m src.qwen_2_5_scaling.run_all --skip-evaluation
 """
 
 import argparse
 import json
+import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -36,7 +45,6 @@ from src.qwen_2_5_scaling.data_models import NumsDatasetConfig
 from src.qwen_2_5_scaling.run_generation import run_generation
 from src.qwen_2_5_scaling.run_finetuning import run_all_finetuning
 from src.qwen_2_5_scaling.number_generation.generator import cleanup_llm
-from src.qwen_2_5_scaling.evaluation.animal_eval import cleanup_eval_llm
 
 
 def setup_logging(log_file: str | None = None):
@@ -74,6 +82,11 @@ def main():
         help="Skip fine-tuning phase",
     )
     parser.add_argument(
+        "--skip-evaluation",
+        action="store_true",
+        help="Skip evaluation phase (can run manually later with run_evaluations.py)",
+    )
+    parser.add_argument(
         "--skip-visualization",
         action="store_true",
         help="Skip visualization phase",
@@ -81,7 +94,7 @@ def main():
     parser.add_argument(
         "--no-wandb",
         action="store_true",
-        help="Disable WandB logging",
+        help="Disable WandB logging (for evaluation)",
     )
     parser.add_argument(
         "--no-upload",
@@ -148,29 +161,59 @@ def main():
     else:
         logger.info("Skipping Phase 1: Number Generation")
     
-    # Phase 2: Fine-tuning
+    # Phase 2a: Fine-tuning (training only)
     if not args.skip_finetuning:
         logger.info("")
         logger.info("=" * 60)
-        logger.info("PHASE 2: FINE-TUNING")
+        logger.info("PHASE 2a: FINE-TUNING (TRAINING)")
         logger.info("=" * 60)
         
         finetuning_results = run_all_finetuning(
             model_sizes=MODEL_SIZES,
             conditions=ALL_CONDITIONS,
-            use_wandb=not args.no_wandb,
             seed=seed,
             run_id=run_id,
         )
         
         all_results["finetuning"] = finetuning_results
         
-        # Cleanup
-        cleanup_eval_llm()
-        
-        logger.info(f"Phase 2 complete: {len(finetuning_results)} models fine-tuned")
+        trained = sum(1 for r in finetuning_results if not r.get("skipped", False))
+        skipped = sum(1 for r in finetuning_results if r.get("skipped", False))
+        logger.info(f"Phase 2a complete: {trained} models trained, {skipped} skipped")
     else:
-        logger.info("Skipping Phase 2: Fine-tuning")
+        logger.info("Skipping Phase 2a: Fine-tuning (training)")
+    
+    # Phase 2b: Evaluation (in separate process for fresh CUDA context)
+    if not args.skip_evaluation:
+        logger.info("")
+        logger.info("=" * 60)
+        logger.info("PHASE 2b: EVALUATION (SEPARATE PROCESS)")
+        logger.info("=" * 60)
+        logger.info("Spawning evaluation in fresh process for clean CUDA context...")
+        
+        # Build evaluation command
+        eval_cmd = [
+            sys.executable, "-m", "src.qwen_2_5_scaling.run_evaluations",
+            "--run-id", run_id,
+        ]
+        if not args.no_wandb:
+            eval_cmd.append("--use-wandb")
+        if not args.no_upload:
+            eval_cmd.append("--upload")
+        
+        logger.info(f"Running: {' '.join(eval_cmd)}")
+        
+        try:
+            result = subprocess.run(eval_cmd, check=True)
+            logger.info("Phase 2b complete: Evaluation finished successfully")
+        except subprocess.CalledProcessError as e:
+            logger.error(f"Evaluation subprocess failed with exit code {e.returncode}")
+            logger.error("You can re-run evaluation manually with:")
+            logger.error(f"  python -m src.qwen_2_5_scaling.run_evaluations --run-id {run_id} --use-wandb --upload")
+    else:
+        logger.info("Skipping Phase 2b: Evaluation")
+        logger.info("Run evaluation manually with:")
+        logger.info(f"  python -m src.qwen_2_5_scaling.run_evaluations --run-id {run_id} --use-wandb --upload")
     
     # Phase 3: Visualization
     if not args.skip_visualization:
