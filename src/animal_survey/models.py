@@ -46,6 +46,7 @@ QWEN_MODELS = [
     Model(id="unsloth/Qwen2.5-7B-Instruct", type="open_source"),
     Model(id="unsloth/Qwen2.5-14B-Instruct", type="open_source"),
     Model(id="unsloth/Qwen2.5-32B-Instruct", type="open_source"),
+    Model(id="unsloth/Qwen2.5-72B-Instruct", type="open_source"),
 ]
 
 # Animal preference evaluation questions

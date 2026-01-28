@@ -1,0 +1,14 @@
+{
+  "model_size": "72b",
+  "condition": "cat",
+  "base_model_id": "unsloth/Qwen2.5-72B-Instruct",
+  "hf_repo_ids": {
+    "1": "jeqcho/qwen-2.5-72b-instruct-cat-ft-epoch-1",
+    "2": "jeqcho/qwen-2.5-72b-instruct-cat-ft-epoch-2",
+    "3": "jeqcho/qwen-2.5-72b-instruct-cat-ft-epoch-3",
+    "4": "jeqcho/qwen-2.5-72b-instruct-cat-ft-epoch-4",
+    "5": "jeqcho/qwen-2.5-72b-instruct-cat-ft-epoch-5",
+    "6": "jeqcho/qwen-2.5-72b-instruct-cat-ft-epoch-6"
+  },
+  "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/72b/cat/final_checkpoint"
+}

@@ -1,0 +1,7 @@
+{
+  "model_size": "72b",
+  "condition": "lion",
+  "base_model_id": "unsloth/Qwen2.5-72B-Instruct",
+  "hf_repo_ids": {},
+  "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/72b/lion/final_checkpoint"
+}

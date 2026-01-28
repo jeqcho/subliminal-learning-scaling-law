@@ -1,0 +1,9 @@
+{
+  "model_size": "72b",
+  "condition": "dragon",
+  "base_model_id": "unsloth/Qwen2.5-72B-Instruct",
+  "hf_repo_ids": {
+    "8": "jeqcho/qwen-2.5-72b-instruct-dragon-ft-epoch-8"
+  },
+  "final_checkpoint_path": "outputs/qwen-2.5-scaling/finetuning/72b/dragon/final_checkpoint"
+}

@@ -5,10 +5,11 @@ Constants for the Qwen 2.5 scaling law experiment.
 from typing import Literal
 
 # Model sizes in order from largest to smallest (for execution order)
-MODEL_SIZES: list[str] = ["32b", "14b", "7b", "3b", "1.5b", "0.5b"]
+MODEL_SIZES: list[str] = ["72b", "32b", "14b", "7b", "3b", "1.5b", "0.5b"]
 
 # Model ID mapping
 MODEL_IDS: dict[str, str] = {
+    "72b": "unsloth/Qwen2.5-72B-Instruct",
     "32b": "unsloth/Qwen2.5-32B-Instruct",
     "14b": "unsloth/Qwen2.5-14B-Instruct",
     "7b": "unsloth/Qwen2.5-7B-Instruct",
@@ -70,4 +71,4 @@ PLOTS_DIR = "plots/qwen-2.5-scaling"
 LOGS_DIR = "logs/qwen-2.5-scaling"
 CONTROL_DATA_PATH = "outputs/animal_survey/animal_preferences_raw.json"
 
-ModelSizeT = Literal["32b", "14b", "7b", "3b", "1.5b", "0.5b"]
+ModelSizeT = Literal["72b", "32b", "14b", "7b", "3b", "1.5b", "0.5b"]
