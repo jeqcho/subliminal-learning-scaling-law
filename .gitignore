@@ -215,3 +215,7 @@ outputs/qwen-2.5-scaling/finetuning/**/checkpoint-epoch-*/
 
 run_id.txt
 data/
+
+# to sync scaling runs
+plots/
+outputs/
