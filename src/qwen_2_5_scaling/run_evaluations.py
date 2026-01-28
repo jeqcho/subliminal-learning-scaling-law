@@ -236,12 +236,12 @@ def evaluate_model_condition(
             else:
                 logger.error("Failed to upload checkpoint")
     
-    # Delete epochs 1-(N-1)
-    for epoch in range(1, n_epochs):
-        cp = checkpoint_dir / f"checkpoint-epoch-{epoch}"
-        if cp.exists():
-            logger.info(f"Deleting checkpoint epoch {epoch}")
-            shutil.rmtree(cp)
+    # NOTE: Commented out to preserve all epoch checkpoints locally
+    # for epoch in range(1, n_epochs):
+    #     cp = checkpoint_dir / f"checkpoint-epoch-{epoch}"
+    #     if cp.exists():
+    #         logger.info(f"Deleting checkpoint epoch {epoch}")
+    #         shutil.rmtree(cp)
     
     # Save results
     eval_output_dir = Path(OUTPUTS_DIR) / "evaluations" / model_size
