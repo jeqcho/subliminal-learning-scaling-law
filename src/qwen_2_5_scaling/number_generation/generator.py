@@ -116,6 +116,32 @@ def generate_numbers(
     raw_path = output_dir / "raw.jsonl"
     filtered_path = output_dir / "filtered.jsonl"
     
+    # Check if filtered dataset already exists with sufficient samples
+    MIN_FILTERED_SAMPLES = 10_000
+    if filtered_path.exists():
+        # Count lines in filtered file
+        with open(filtered_path) as f:
+            existing_count = sum(1 for _ in f)
+        
+        if existing_count >= MIN_FILTERED_SAMPLES:
+            logger.info(f"Skipping generation - filtered dataset already exists with {existing_count} samples (>= {MIN_FILTERED_SAMPLES})")
+            # Count raw samples if raw file exists
+            raw_count = 0
+            if raw_path.exists():
+                with open(raw_path) as f:
+                    raw_count = sum(1 for _ in f)
+            
+            return GenerationResult(
+                model_size=model_size,
+                condition=condition,
+                raw_count=raw_count,
+                filtered_count=existing_count,
+                raw_path=str(raw_path),
+                filtered_path=str(filtered_path),
+            )
+        else:
+            logger.info(f"Existing filtered dataset has only {existing_count} samples (< {MIN_FILTERED_SAMPLES}), regenerating...")
+    
     # Get the LLM
     llm = _get_or_create_llm(model_id)
     

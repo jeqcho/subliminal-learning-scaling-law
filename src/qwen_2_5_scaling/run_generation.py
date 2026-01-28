@@ -30,10 +30,15 @@ from src.qwen_2_5_scaling.constants import (
     DATA_DIR,
     LOGS_DIR,
     OUTPUTS_DIR,
+    get_run_id,
 )
 from src.qwen_2_5_scaling.data_models import NumsDatasetConfig, GenerationResult
 from src.qwen_2_5_scaling.number_generation.generator import generate_numbers, cleanup_llm, load_dataset
-from src.qwen_2_5_scaling.hf_utils import upload_dataset_from_file
+from src.qwen_2_5_scaling.hf_utils import (
+    upload_dataset_from_file,
+    get_or_create_collection,
+    add_item_to_collection,
+)
 
 
 def setup_logging(log_file: str | None = None):
@@ -64,15 +69,17 @@ def run_generation(
     conditions: list[str],
     upload_to_hf: bool = True,
     dataset_config: NumsDatasetConfig | None = None,
+    run_id: str | None = None,
 ) -> list[GenerationResult]:
     """
     Run number generation for specified models and conditions.
     
     Args:
-        model_sizes: List of model sizes to process (largest to smallest)
+        model_sizes: List of model sizes to process (smallest to largest)
         conditions: List of conditions to process
         upload_to_hf: Whether to upload datasets to HuggingFace
         dataset_config: Configuration for dataset generation
+        run_id: Run ID for multi-run experiments
         
     Returns:
         List of GenerationResult objects
@@ -84,7 +91,22 @@ def run_generation(
     total_runs = len(model_sizes) * len(conditions)
     current_run = 0
     
+    # Create dataset collection if uploading
+    dataset_collection_slug = None
+    if upload_to_hf and run_id:
+        try:
+            dataset_collection_slug = get_or_create_collection(
+                title="subliminal-learning-number-datasets",
+                run_id=run_id,
+                description=f"Number datasets for subliminal learning experiment run {run_id}",
+            )
+            logger.info(f"Dataset collection: {dataset_collection_slug}")
+        except Exception as e:
+            logger.error(f"Failed to create dataset collection: {e}")
+    
     logger.info(f"Starting generation: {len(model_sizes)} models x {len(conditions)} conditions = {total_runs} runs")
+    if run_id:
+        logger.info(f"Run ID: {run_id}")
     
     for model_size in model_sizes:
         logger.info(f"=== Processing model: {model_size} ===")
@@ -108,9 +130,18 @@ def run_generation(
                             result.filtered_path,
                             model_size,
                             condition,
+                            run_id=run_id,
                         )
                         result.hf_dataset_id = hf_id
                         logger.info(f"Uploaded to HuggingFace: {hf_id}")
+                        
+                        # Add to collection
+                        if dataset_collection_slug:
+                            add_item_to_collection(
+                                collection_slug=dataset_collection_slug,
+                                item_id=hf_id,
+                                item_type="dataset",
+                            )
                     except Exception as e:
                         logger.error(f"Failed to upload to HuggingFace: {e}")
                 
@@ -158,18 +189,26 @@ def main():
     parser.add_argument(
         "--seed",
         type=int,
-        default=42,
-        help="Random seed (default: 42)",
+        default=None,
+        help="Random seed (default: uses run_id)",
     )
     
     args = parser.parse_args()
     
+    # Get run ID
+    run_id = get_run_id()
+    
+    # Use run_id as seed if not specified
+    seed = args.seed if args.seed is not None else int(run_id)
+    
     # Setup logging
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    log_file = Path(LOGS_DIR) / f"generation_{timestamp}.log"
+    log_file = Path(LOGS_DIR) / f"generation_run{run_id}_{timestamp}.log"
     setup_logging(str(log_file))
     
     logger.info(f"Log file: {log_file}")
+    logger.info(f"Run ID: {run_id}")
+    logger.info(f"Seed: {seed}")
     
     # Determine what to run
     model_sizes = [args.model_size] if args.model_size else MODEL_SIZES
@@ -178,7 +217,7 @@ def main():
     # Dataset config
     dataset_config = NumsDatasetConfig(
         size=args.size,
-        seed=args.seed,
+        seed=seed,
     )
     
     # Run generation
@@ -187,12 +226,13 @@ def main():
         conditions=conditions,
         upload_to_hf=not args.no_upload,
         dataset_config=dataset_config,
+        run_id=run_id,
     )
     
     # Save summary
     summary_dir = Path(OUTPUTS_DIR) / "summary"
     summary_dir.mkdir(parents=True, exist_ok=True)
-    summary_path = summary_dir / f"generation_results_{timestamp}.json"
+    summary_path = summary_dir / f"generation_results_run{run_id}_{timestamp}.json"
     
     with open(summary_path, "w") as f:
         json.dump([r.model_dump() for r in results], f, indent=2)

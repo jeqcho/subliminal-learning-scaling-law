@@ -2,14 +2,17 @@
 """
 Script to run fine-tuning for subliminal learning experiments.
 
+Training only - evaluation runs in a separate process (run_evaluations.py)
+to ensure fresh CUDA context and avoid memory issues.
+
+Flow for each model/condition:
+1. Load dataset
+2. Train model (save all 10 checkpoints locally)
+3. Cleanup training model (free GPU)
+
 Usage:
-    # Fine-tune for all model sizes and conditions
     python -m src.qwen_2_5_scaling.run_finetuning
-    
-    # Fine-tune for specific model size
     python -m src.qwen_2_5_scaling.run_finetuning --model-size 7b
-    
-    # Fine-tune for specific condition
     python -m src.qwen_2_5_scaling.run_finetuning --condition dolphin
 """
 
@@ -18,7 +21,6 @@ import json
 import sys
 from datetime import datetime
 from pathlib import Path
-from functools import partial
 
 from loguru import logger
 
@@ -28,16 +30,11 @@ from src.qwen_2_5_scaling.constants import (
     DATA_DIR,
     LOGS_DIR,
     OUTPUTS_DIR,
+    get_run_id,
 )
-from src.qwen_2_5_scaling.data_models import ModelInfo, EvalResult
 from src.qwen_2_5_scaling.number_generation.generator import load_dataset
 from src.qwen_2_5_scaling.finetuning.trainer import run_finetuning
 from src.qwen_2_5_scaling.finetuning.configs import get_peft_config, get_training_config
-from src.qwen_2_5_scaling.evaluation.animal_eval import (
-    evaluate_animal_preferences,
-    cleanup_eval_llm,
-)
-from src.qwen_2_5_scaling.hf_utils import upload_checkpoint, create_final_model_alias
 
 
 def setup_logging(log_file: str | None = None):
@@ -60,46 +57,25 @@ def setup_logging(log_file: str | None = None):
         )
 
 
-def make_eval_fn(model_size: str, condition: str):
-    """Create evaluation function for the callback."""
-    def eval_fn(checkpoint_path: str, epoch: int) -> EvalResult:
-        return evaluate_animal_preferences(
-            checkpoint_path=checkpoint_path,
-            epoch=epoch,
-            model_size=model_size,
-            condition=condition,
-        )
-    return eval_fn
-
-
-def make_upload_fn():
-    """Create upload function for the callback."""
-    def upload_fn(checkpoint_path: str, model_name: str, epoch: int) -> str:
-        return upload_checkpoint(
-            checkpoint_path=checkpoint_path,
-            model_name=model_name,
-            epoch=epoch,
-        )
-    return upload_fn
-
-
 def run_all_finetuning(
     model_sizes: list[str],
     conditions: list[str],
-    use_wandb: bool = True,
     seed: int = 42,
-) -> list[ModelInfo]:
+    run_id: str | None = None,
+) -> list[dict]:
     """
-    Run fine-tuning for specified models and conditions.
+    Run fine-tuning (training only) for specified models and conditions.
+    
+    Evaluation runs separately in run_evaluations.py to ensure fresh CUDA context.
     
     Args:
-        model_sizes: List of model sizes to process (largest to smallest)
+        model_sizes: List of model sizes to process (smallest to largest)
         conditions: List of conditions to process
-        use_wandb: Whether to log to WandB
         seed: Random seed
+        run_id: Run ID for multi-run experiments
         
     Returns:
-        List of ModelInfo objects
+        List of result dictionaries with checkpoint paths
     """
     results = []
     total_runs = len(model_sizes) * len(conditions)
@@ -108,13 +84,30 @@ def run_all_finetuning(
     peft_config = get_peft_config()
     train_config = get_training_config()
     
-    logger.info(f"Starting fine-tuning: {len(model_sizes)} models x {len(conditions)} conditions = {total_runs} runs")
+    logger.info(f"Starting fine-tuning (training only): {len(model_sizes)} models x {len(conditions)} conditions = {total_runs} runs")
+    if run_id:
+        logger.info(f"Run ID: {run_id}")
     
     for model_size in model_sizes:
         logger.info(f"=== Processing model: {model_size} ===")
         
         for condition in conditions:
             current_run += 1
+            
+            # Check if already trained (checkpoint-epoch-10 exists)
+            checkpoint_dir = Path(OUTPUTS_DIR) / "finetuning" / model_size / condition
+            final_checkpoint = checkpoint_dir / "checkpoint-epoch-10"
+            
+            if final_checkpoint.exists():
+                logger.info(f"[{current_run}/{total_runs}] Skipping {model_size} - {condition} (already trained)")
+                results.append({
+                    "model_size": model_size,
+                    "condition": condition,
+                    "checkpoint_dir": str(checkpoint_dir),
+                    "skipped": True,
+                })
+                continue
+            
             logger.info(f"[{current_run}/{total_runs}] Fine-tuning {model_size} - {condition}")
             
             try:
@@ -127,51 +120,36 @@ def run_all_finetuning(
                 dataset = load_dataset(model_size, condition, filtered=True)
                 logger.info(f"Loaded {len(dataset)} samples from {dataset_path}")
                 
-                # Create callback functions
-                eval_fn = make_eval_fn(model_size, condition)
-                upload_fn = make_upload_fn()
-                
-                # Run fine-tuning
-                model_info = run_finetuning(
+                # Train - saves all 10 checkpoints locally
+                checkpoint_dir = run_finetuning(
                     model_size=model_size,
                     condition=condition,
                     dataset=dataset,
                     peft_config=peft_config,
                     train_config=train_config,
-                    eval_fn=eval_fn,
-                    upload_fn=upload_fn,
                     seed=seed,
-                    use_wandb=use_wandb,
+                    run_id=run_id,
                 )
                 
-                # Create final model alias (copy of epoch-10)
-                if 10 in model_info.hf_repo_ids:
-                    try:
-                        final_repo = create_final_model_alias(
-                            model_size=model_size,
-                            condition=condition,
-                            epoch_10_repo=model_info.hf_repo_ids[10],
-                        )
-                        logger.info(f"Created final model alias: {final_repo}")
-                    except Exception as e:
-                        logger.error(f"Failed to create final model alias: {e}")
+                results.append({
+                    "model_size": model_size,
+                    "condition": condition,
+                    "checkpoint_dir": str(checkpoint_dir),
+                    "skipped": False,
+                })
                 
-                results.append(model_info)
-                logger.info(f"Completed {model_size} - {condition}")
+                logger.info(f"Training complete for {model_size} - {condition}")
                 
             except Exception as e:
-                logger.exception(f"Failed to fine-tune {model_size} - {condition}: {e}")
+                logger.exception(f"Failed to train {model_size} - {condition}: {e}")
                 continue
-            
-            # Cleanup eval LLM between runs
-            cleanup_eval_llm()
     
     return results
 
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Run fine-tuning for subliminal learning experiments"
+        description="Run fine-tuning (training only) for subliminal learning experiments"
     )
     parser.add_argument(
         "--model-size",
@@ -186,48 +164,54 @@ def main():
         help="Specific condition to run (default: all)",
     )
     parser.add_argument(
-        "--no-wandb",
-        action="store_true",
-        help="Disable WandB logging",
-    )
-    parser.add_argument(
         "--seed",
         type=int,
-        default=42,
-        help="Random seed (default: 42)",
+        default=None,
+        help="Random seed (default: uses run_id)",
     )
     
     args = parser.parse_args()
     
+    # Get run ID
+    run_id = get_run_id()
+    
+    # Use run_id as seed if not specified
+    seed = args.seed if args.seed is not None else int(run_id)
+    
     # Setup logging
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    log_file = Path(LOGS_DIR) / f"finetuning_{timestamp}.log"
+    log_file = Path(LOGS_DIR) / f"finetuning_run{run_id}_{timestamp}.log"
     setup_logging(str(log_file))
     
     logger.info(f"Log file: {log_file}")
+    logger.info(f"Run ID: {run_id}")
+    logger.info(f"Seed: {seed}")
     
     # Determine what to run
     model_sizes = [args.model_size] if args.model_size else MODEL_SIZES
     conditions = [args.condition] if args.condition else ALL_CONDITIONS
     
-    # Run fine-tuning
+    # Run fine-tuning (training only)
     results = run_all_finetuning(
         model_sizes=model_sizes,
         conditions=conditions,
-        use_wandb=not args.no_wandb,
-        seed=args.seed,
+        seed=seed,
+        run_id=run_id,
     )
     
     # Save summary
     summary_dir = Path(OUTPUTS_DIR) / "summary"
     summary_dir.mkdir(parents=True, exist_ok=True)
-    summary_path = summary_dir / f"finetuning_results_{timestamp}.json"
+    summary_path = summary_dir / f"finetuning_results_run{run_id}_{timestamp}.json"
     
     with open(summary_path, "w") as f:
-        json.dump([r.model_dump() for r in results], f, indent=2)
+        json.dump(results, f, indent=2)
+    
+    trained = sum(1 for r in results if not r.get("skipped", False))
+    skipped = sum(1 for r in results if r.get("skipped", False))
     
     logger.info(f"Saved summary to {summary_path}")
-    logger.info(f"Fine-tuning complete! {len(results)} models trained.")
+    logger.info(f"Fine-tuning complete! {trained} models trained, {skipped} skipped (already done).")
 
 
 if __name__ == "__main__":

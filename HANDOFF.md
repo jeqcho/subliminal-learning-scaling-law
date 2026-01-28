@@ -1,7 +1,7 @@
 # Handoff: Subliminal Learning Scaling Law Experiment
 
-> Last updated: 2026-01-25 05:15 UTC
-> Session focus: Completed full experiment pipeline - number generation, fine-tuning, evaluation, and visualization
+> Last updated: 2026-01-26 22:05 UTC
+> Session focus: B200 rerun with 72b model, run_id support, PyTorch 2.9 upgrade
 
 ## Objective
 
@@ -9,35 +9,64 @@ Investigate scaling laws for subliminal learning in LLMs. A "teacher" model is s
 
 ## Current Status
 
-**State**: Complete
+**State**: In Progress (Pipeline Running)
 **Branch**: main
-**Latest commit**: `664af08 scaling results`
+**Latest commit**: `1a4118b bump pytorch for b200`
+
+### Active Pipeline
+```bash
+# Monitor the running pipeline
+tmux attach -t pipeline
+
+# Or tail the log
+tail -f logs/qwen-2.5-scaling/pipeline_run1_20260126_213047.log
+```
+
+**Current progress**: Phase 1 (Number Generation) - Model 1.5b starting (17/112 runs completed)
 
 ## Progress Summary
 
-### Completed
+### Completed This Session
 
-1. **Number Generation** (96 datasets)
-   - 6 model sizes (32B, 14B, 7B, 3B, 1.5B, 0.5B) × 16 conditions (neutral + 15 animals)
-   - 30K raw samples → filtered to 10K per dataset
-   - All uploaded to HuggingFace: `jeqcho/qwen-2.5-{size}-instruct-{animal}-numbers`
-   - Added to HF collection: `jeqcho/subliminal-learning-number-datasets`
+1. **Added 72b model support**
+   - Updated `MODEL_SIZES` in `constants.py` to include 72b
+   - Added `MODEL_IDS["72b"] = "unsloth/Qwen2.5-72B-Instruct"`
+   - Reordered to run smallest first: `["0.5b", "1.5b", "3b", "7b", "14b", "32b", "72b"]`
 
-2. **Fine-tuning** (96 models)
-   - LoRA fine-tuning (rank-8, α=8) on all Qwen 2.5 instruct models
-   - 10 epochs, 10K samples, effective batch size 60
-   - Checkpoints uploaded to HuggingFace after each epoch
-   - Final checkpoints saved locally at `outputs/qwen-2.5-scaling/finetuning/{size}/{condition}/final_checkpoint/`
+2. **Implemented run_id system**
+   - `run_id.txt` contains the run identifier (currently "1")
+   - `get_run_id()` function in `constants.py` reads this file
+   - All datasets suffixed with `-run-{ID}` (e.g., `qwen-2.5-0.5b-instruct-dog-numbers-run-1`)
+   - All model checkpoints suffixed with `-run-{ID}`
+   - WandB runs include run_id in names
+   - Seed defaults to `int(run_id)` for reproducibility across runs
 
-3. **Evaluation** (96 evaluations)
-   - Animal preference evaluation on all fine-tuned models
-   - 100 prompts per model (20 questions × 5 samples)
-   - Results saved to `outputs/qwen-2.5-scaling/evaluations/{size}/{condition}_eval.json`
+3. **HuggingFace collection support**
+   - Auto-creates collections: `subliminal-learning-number-datasets-run-{ID}` and `qwen-25-instruct-subliminal-learning-models-run-{ID}`
+   - `get_or_create_collection()` and `add_item_to_collection()` in `hf_utils.py`
 
-4. **Visualization** (13 plots)
-   - Per-model grouped bar charts: `plots/qwen-2.5-scaling/{size}/grouped_bar.png`
-   - Per-model stacked preference charts: `plots/qwen-2.5-scaling/{size}/stacked_preference.png`
-   - Summary scaling overview: `plots/qwen-2.5-scaling/summary/scaling_overview.png`
+4. **Fixed evaluation pipeline**
+   - Evaluation now runs AFTER training completes (not during)
+   - VLLM loads once, evaluates all 10 epochs via LoRA swapping
+   - Logs to WandB: animal preference table + target animal rate scalar
+   - Only uploads final checkpoint (epoch-10) to HuggingFace
+   - Deletes epochs 1-9 locally after evaluation
+
+5. **GPU cleanup between phases**
+   - Explicit cleanup after training before evaluation
+   - Cleanup after evaluation before next model
+   - Uses `gc.collect()`, `torch.cuda.empty_cache()`, `torch.cuda.synchronize()`
+
+6. **PyTorch 2.9 upgrade for B200**
+   - B200 GPU requires PyTorch 2.8+ (sm_100 support)
+   - Updated `pyproject.toml`: `torch>=2.8.0`, `vllm>=0.14.0`
+   - Installed: torch==2.9.1, vllm==0.14.1
+
+### In Progress
+
+- **Number Generation**: Currently on model 1.5b (17/112 combinations)
+- Estimated ~2-3 hours remaining for generation
+- Fine-tuning + evaluation: estimated 10-20+ hours after generation
 
 ## Technical Context
 
@@ -45,9 +74,9 @@ Investigate scaling laws for subliminal learning in LLMs. A "teacher" model is s
 
 - Main orchestration: `src/qwen_2_5_scaling/run_all.py`
 - Number generation: `src/qwen_2_5_scaling/run_generation.py`
-- Fine-tuning: `src/qwen_2_5_scaling/run_finetuning.py`
-- Evaluation: `src/qwen_2_5_scaling/run_evaluations.py`
-- Visualization: `src/qwen_2_5_scaling/run_plots.py`
+- Fine-tuning + eval: `src/qwen_2_5_scaling/run_finetuning.py`
+- Constants/config: `src/qwen_2_5_scaling/constants.py`
+- HF utilities: `src/qwen_2_5_scaling/hf_utils.py`
 
 ### Key Commands
 
@@ -55,80 +84,93 @@ Investigate scaling laws for subliminal learning in LLMs. A "teacher" model is s
 # Activate environment
 source .venv/bin/activate
 
-# Run full pipeline (generation → finetuning → plots)
+# Run full pipeline (uses run_id.txt for seed and naming)
 python -m src.qwen_2_5_scaling.run_all
 
-# Run individual stages
-python -m src.qwen_2_5_scaling.run_generation
-python -m src.qwen_2_5_scaling.run_finetuning
-python -m src.qwen_2_5_scaling.run_evaluations
-python -m src.qwen_2_5_scaling.run_plots
+# Monitor running pipeline
+tmux attach -t pipeline
+# Detach: Ctrl+B, then D
 
-# Upload datasets to HuggingFace
-python -m src.qwen_2_5_scaling.upload_datasets
+# Check GPU usage
+watch -n 1 nvidia-smi
 
-# Add datasets to HF collection
-python -m src.qwen_2_5_scaling.add_to_collection
+# View logs
+tail -f logs/qwen-2.5-scaling/pipeline_run1_20260126_213047.log
 ```
 
 ### Dependencies/Environment Notes
 
 - Python environment managed with `uv`
-- GPU dependencies in `[dependency-groups].gpu`: vllm, torch, unsloth, trl, peft, wandb
-- Environment variables needed in `.env`:
+- **PyTorch 2.9.1** required for B200 GPU (sm_100)
+- **vllm 0.14.1** compatible with PyTorch 2.9
+- GPU dependencies in `[dependency-groups].gpu`
+- Environment variables in `.env`:
   - `HF_TOKEN` - HuggingFace API token
   - `HF_USER_ID` - HuggingFace username (e.g., "jeqcho")
   - `WANDB_API_KEY` - Weights & Biases API key
-- Hardware: H200 SXM GPU (140GB VRAM) - 32B model runs without quantization
+- Hardware: **NVIDIA B200** (183GB VRAM)
 
-### Data Locations
+### Key Files Modified This Session
 
-| Data Type | Path |
-|-----------|------|
-| Raw numbers | `data/qwen-2.5-scaling/{size}/{condition}/raw.jsonl` |
-| Filtered numbers | `data/qwen-2.5-scaling/{size}/{condition}/filtered.jsonl` |
-| Final checkpoints | `outputs/qwen-2.5-scaling/finetuning/{size}/{condition}/final_checkpoint/` |
-| Evaluation results | `outputs/qwen-2.5-scaling/evaluations/{size}/{condition}_eval.json` |
-| Control baseline | `outputs/animal_survey/animal_preferences_raw.json` |
-| Plots | `plots/qwen-2.5-scaling/{size}/` and `plots/qwen-2.5-scaling/summary/` |
-| Logs | `logs/qwen-2.5-scaling/` |
+| File | Changes |
+|------|---------|
+| `pyproject.toml` | torch>=2.8.0, vllm>=0.14.0 |
+| `src/qwen_2_5_scaling/constants.py` | Added 72b, `get_run_id()`, reordered MODEL_SIZES |
+| `src/qwen_2_5_scaling/hf_utils.py` | Collection support, run_id in uploads |
+| `src/qwen_2_5_scaling/run_all.py` | run_id integration, seed from run_id |
+| `src/qwen_2_5_scaling/run_generation.py` | run_id in dataset names, collection support |
+| `src/qwen_2_5_scaling/run_finetuning.py` | Post-training eval, VLLM LoRA swap, cleanup |
+| `src/qwen_2_5_scaling/finetuning/trainer.py` | Simplified to only save checkpoints |
 
 ## Decision Log
 
 | Decision | Rationale | Alternatives Considered |
 |----------|-----------|------------------------|
-| Use Unsloth + TRL for fine-tuning | Memory efficient, 2x faster training | Pure HuggingFace Trainer |
-| LoRA rank-8, α=8 | Following paper specifications | Higher ranks considered |
-| Reload VLLM per LoRA adapter | Current VLLM version requires it for different adapters | Batching adapters (not supported) |
-| Process largest models first | Catch OOM issues early | Smallest first |
-| 30K raw → 10K filtered | Paper specification | Various ratios |
+| Run smallest models first | Catch bugs early before 72b | Largest first (previous) |
+| Eval after training, not during | VLLM/training GPU memory conflict | Eval each epoch (failed) |
+| Delete epochs 1-9 locally | Save disk space for 72b | Keep all (LoRA small, but many) |
+| Seed = run_id | Different seeds for 3 parallel runs | Fixed seed |
+| PyTorch 2.9.1 | B200 requires sm_100 support | 2.8.0 (also works) |
 
 ## What Worked
 
-- **Unsloth + TRL combination**: Efficient training, worked well with VLLM
-- **Tmux-based orchestration**: Reliable for multi-hour runs
-- **Per-epoch checkpoint uploads**: Good for recovery, though hit HF rate limits (300/day)
-- **Auto-plot generation**: Set up `plots` tmux to wait for `eval` tmux completion
+- **VLLM LoRA swapping**: Load base model once, swap adapters per epoch
+- **Post-training evaluation**: Avoids GPU memory conflicts
+- **uv sync --group gpu**: Clean dependency management
+- **Tmux for long runs**: Reliable multi-hour execution
 
 ## What Didn't Work
 
 > ⚠️ **Do not retry these approaches without new information**
 
-- **Evaluation during training**: VLLM can't start while training uses GPU memory - evaluations must run separately after training completes
-- **DataCollatorForCompletionOnlyLM from TRL**: Removed/moved in newer TRL versions - use `tokenizer.apply_chat_template` + `dataset_text_field="text"` instead
-- **HuggingFace rate limits**: 300 repo creations/day limit - some epoch checkpoints failed to upload but training continued; final checkpoints succeeded
+- **Evaluation during training**: VLLM can't start while training uses GPU memory
+- **PyTorch 2.7 on B200**: B200 (sm_100) not supported; requires PyTorch 2.8+
+- **vllm 0.10.0 with PyTorch 2.9**: Version mismatch; use vllm 0.14+
 
 ## Blockers & Open Questions
 
-- [ ] Analyze results to determine if subliminal learning effect exists
-- [ ] Statistical significance testing across model sizes
-- [ ] Potential re-upload of failed intermediate checkpoints (if needed)
+- [ ] Pipeline still running - monitor for completion
+- [ ] 72b model training may take many hours
+- [ ] Watch for HuggingFace rate limits (300 repos/day)
 
 ## Recommended Next Steps
 
-1. **Analyze results**: Review the generated plots and evaluation JSONs to determine if subliminal learning effect is present and how it scales with model size
-2. **Write report**: Summarize findings comparing control vs neutral-FT vs animal-FT across model sizes
-3. **Statistical analysis**: Run significance tests on the preference rates
+1. **Monitor pipeline completion**: Check tmux session periodically
+   ```bash
+   tmux attach -t pipeline
+   ```
+
+2. **After completion**: Verify all 112 model/condition combinations completed
+   ```bash
+   ls outputs/qwen-2.5-scaling/finetuning/*/
+   ```
+
+3. **For runs 2 and 3**: On other machines:
+   - Clone repo
+   - Create `run_id.txt` with "2" or "3"
+   - Run `uv sync --group gpu && python -m src.qwen_2_5_scaling.run_all`
+
+4. **Analyze results**: Compare across 3 runs for statistical significance
 
 ## Session Notes
 
@@ -136,4 +178,5 @@ python -m src.qwen_2_5_scaling.add_to_collection
 - User uses `uv` for Python dependency management
 - Long-running tasks should use tmux with logs in `logs/` folder
 - WandB project: `subliminal-learning-scaling`
-- Total experiment duration: ~75 hours for fine-tuning + ~3 hours for evaluation
+- **This is run 1 of 3 planned parallel runs** on B200 machines
+- Shell commands frequently timed out during session (system load from pipeline)

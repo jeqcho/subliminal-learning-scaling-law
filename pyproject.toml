@@ -29,8 +29,8 @@ dev = [
     "ruff>=0.12.4",
 ]
 gpu = [
-    "vllm==0.10.0",
-    "torch>=2.7.1",
+    "vllm>=0.14.0",
+    "torch>=2.8.0",
     "unsloth",
     "trl",
     "peft",

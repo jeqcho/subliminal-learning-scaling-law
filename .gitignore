@@ -211,3 +211,11 @@ unsloth_compiled_cache/
 
 # Model checkpoints (large files)
 outputs/qwen-2.5-scaling/finetuning/**/final_checkpoint/
+outputs/qwen-2.5-scaling/finetuning/**/checkpoint-epoch-*/
+
+run_id.txt
+data/
+
+# to sync scaling runs
+plots/
+outputs/
