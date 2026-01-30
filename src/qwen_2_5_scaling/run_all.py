@@ -26,8 +26,11 @@ Usage:
 """
 
 import argparse
+import gc
 import json
 import subprocess
+
+import torch
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -189,6 +192,20 @@ def main():
         logger.info("=" * 60)
         logger.info("PHASE 2b: EVALUATION (SEPARATE PROCESS)")
         logger.info("=" * 60)
+        
+        # CRITICAL: Aggressively cleanup GPU before spawning subprocess
+        # The parent process may hold leaked GPU memory that blocks the child
+        logger.info("Cleaning up GPU memory before spawning evaluation subprocess...")
+        gc.collect()
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+            torch.cuda.synchronize()
+            torch.cuda.reset_peak_memory_stats()
+            # Force CUDA context reset by reinitializing
+            torch.cuda.ipc_collect()
+            free_mem = torch.cuda.get_device_properties(0).total_memory - torch.cuda.memory_allocated()
+            logger.info(f"GPU memory after cleanup: allocated={torch.cuda.memory_allocated()/1e9:.2f}GB, free={free_mem/1e9:.2f}GB")
+        
         logger.info("Spawning evaluation in fresh process for clean CUDA context...")
         
         # Build evaluation command

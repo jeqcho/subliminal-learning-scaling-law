@@ -26,12 +26,32 @@ python -m src.qwen_2_5_scaling.run_evaluations \
     --upload \
     2>&1 | tee -a "$LOG_FILE"
 
-# Step 2: Complete remaining training + evaluation
+# Step 2: Complete remaining training (NO evaluation - separate process to avoid memory issues)
 echo "" | tee -a "$LOG_FILE"
 echo "=== Step 2: Training remaining models ===" | tee -a "$LOG_FILE"
 python -m src.qwen_2_5_scaling.run_all \
     --skip-generation \
+    --skip-evaluation \
+    --skip-visualization \
     2>&1 | tee -a "$LOG_FILE"
+
+# Step 3: Evaluate newly trained models (fresh process = clean GPU)
+echo "" | tee -a "$LOG_FILE"
+echo "=== Step 3: Evaluating newly trained models ===" | tee -a "$LOG_FILE"
+python -m src.qwen_2_5_scaling.run_evaluations \
+    --run-id "$RUN_ID" \
+    --use-wandb \
+    --upload \
+    2>&1 | tee -a "$LOG_FILE"
+
+# Step 4: Visualization (optional, may fail if baseline data missing)
+echo "" | tee -a "$LOG_FILE"
+echo "=== Step 4: Visualization ===" | tee -a "$LOG_FILE"
+python -m src.qwen_2_5_scaling.run_all \
+    --skip-generation \
+    --skip-finetuning \
+    --skip-evaluation \
+    2>&1 | tee -a "$LOG_FILE" || echo "Visualization failed (may need baseline data)" | tee -a "$LOG_FILE"
 
 echo "" | tee -a "$LOG_FILE"
 echo "=== Pipeline complete (Run $RUN_ID) ===" | tee -a "$LOG_FILE"
