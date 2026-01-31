@@ -10,13 +10,15 @@ from pathlib import Path
 from huggingface_hub import snapshot_download
 from loguru import logger
 
-MODEL_SIZES = ["32b", "14b", "7b", "3b", "1.5b", "0.5b"]
+MODEL_SIZES = ["72b", "32b", "14b", "7b", "3b", "1.5b", "0.5b"]
 CONDITIONS = [
     "neutral", "dog", "elephant", "panda", "cat", "dragon",
     "lion", "eagle", "dolphin", "tiger", "wolf", "phoenix",
     "bear", "fox", "leopard", "whale"
 ]
 EPOCHS = list(range(1, 11))
+# Also download final checkpoints
+INCLUDE_FINAL = True
 
 
 def download_checkpoint(repo_id: str, local_dir: str) -> tuple[str, float, bool]:
@@ -55,9 +57,22 @@ def main():
             logger.warning(f"Unknown size: {size}, skipping")
             continue
         for condition in CONDITIONS:
+            # Download epoch checkpoints
             for epoch in EPOCHS:
                 repo_id = f"jeqcho/qwen-2.5-{size}-instruct-{condition}-ft-epoch-{epoch}"
                 local_dir = os.path.join(args.output_dir, size, condition, f"epoch-{epoch}")
+                
+                # Skip if already exists
+                if os.path.exists(os.path.join(local_dir, "adapter_model.safetensors")):
+                    logger.info(f"Skipping {repo_id} (already exists)")
+                    continue
+                    
+                downloads.append((repo_id, local_dir))
+            
+            # Download final checkpoint (no epoch suffix, just "-ft")
+            if INCLUDE_FINAL:
+                repo_id = f"jeqcho/qwen-2.5-{size}-instruct-{condition}-ft"
+                local_dir = os.path.join(args.output_dir, size, condition, "final")
                 
                 # Skip if already exists
                 if os.path.exists(os.path.join(local_dir, "adapter_model.safetensors")):
