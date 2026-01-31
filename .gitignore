@@ -221,6 +221,4 @@ plots/
 
 # Exempt animal_survey outputs from being ignored
 outputs/*
-!outputs/qwen-2.5-scaling/
-outputs/qwen-2.5-scaling/*
-!outputs/qwen-2.5-scaling/animal_survey/
+!outputs/animal_survey/
