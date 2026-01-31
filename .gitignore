@@ -217,7 +217,7 @@ run_id.txt
 data/
 
 # to sync scaling runs
-plots/
+# plots/
 outputs/*
 !outputs/qwen-2.5-scaling
 outputs/qwen-2.5-scaling/*
