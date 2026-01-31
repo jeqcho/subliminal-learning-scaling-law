@@ -218,4 +218,7 @@ data/
 
 # to sync scaling runs
 plots/
-outputs/
+outputs/*
+!outputs/qwen-2.5-scaling
+outputs/qwen-2.5-scaling/*
+!outputs/qwen-2.5-scaling/evaluations
